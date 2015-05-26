@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2015 a las 18:27:10
+-- Tiempo de generación: 25-05-2015 a las 23:58:16
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -24,13 +24,21 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_BusquedaParametro`(IN `d_idEquipo` VARCHAR(45))
+    NO SQL
+select * from equipo where idEquipo = d_idEquipo$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_GuardarEquipo`(IN `d_NombreEquipo` VARCHAR(30), IN `d_NombreUsuario` VARCHAR(45), IN `d_Contrasena` VARCHAR(45))
     NO SQL
-INSERT INTO equipo values (0, d_NombreEquipo, d_NombreUsuario, d_Contrasena, 1000, false)$$
+INSERT INTO equipo values (null, d_NombreEquipo, d_NombreUsuario, d_Contrasena, 1000, false)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ListarEquipo`()
     NO SQL
 SELECT * FROM equipo$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Login`(IN `d_nombre_usuario` VARCHAR(45))
+    NO SQL
+select idEquipo, contrasena, administrador from equipo where nombre_usuario = d_nombre_usuario$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ModificarEquipo`(IN `d_idEquipo` INT, IN `d_nombreEquipo` VARCHAR(30), IN `d_nombreUsuario` VARCHAR(45), IN `d_contrasena` VARCHAR(45))
     NO SQL
@@ -64,14 +72,22 @@ CREATE TABLE IF NOT EXISTS `equipo` (
   `monedas` int(11) DEFAULT NULL,
   `administrador` bit(1) DEFAULT NULL,
   PRIMARY KEY (`idEquipo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `equipo`
 --
 
 INSERT INTO `equipo` (`idEquipo`, `nombre_equipo`, `nombre_usuario`, `contrasena`, `monedas`, `administrador`) VALUES
-(1, 'MULTIMEDIA', 'm_mm', '123', 1000, b'0');
+(0, 'REDES', 'redes_JP', 'r1234', 1000, b'0'),
+(1, 'MULTIMEDIA', 'm_mm', '2431', 1000, b'0'),
+(2, 'MANTENIMIENTO', 'Mantenimiento_JP', 'man123', 1000, b'0'),
+(3, 'DISEÑO', 'DISEÑO_JP', 'D123', 1000, b'0'),
+(4, 'COCINA', 'cocineros', 'cocina17', 1000, b'0'),
+(5, 'salud', 'salud_123', 's12', 1000, b'0'),
+(6, 'Enfermeria', 'enfer12', 's12', 1000, b'0'),
+(7, '12345', 'kjsd', '123', 1000, b'0'),
+(8, '112312', 'sdasd', 'awe', 1000, b'0');
 
 -- --------------------------------------------------------
 
@@ -110,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 CREATE TABLE IF NOT EXISTS `transaccion` (
-  `idTransaccion` int(11) NOT NULL,
+  `idTransaccion` int(11) NOT NULL AUTO_INCREMENT,
   `cantidad` int(11) DEFAULT NULL,
   `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `producto_idProducto` int(11) NOT NULL,
@@ -118,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `transaccion` (
   PRIMARY KEY (`idTransaccion`),
   KEY `fk_transaccion_producto1_idx` (`producto_idProducto`),
   KEY `fk_transaccion_equipo1_idx` (`equipo_idEquipo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Restricciones para tablas volcadas
@@ -140,8 +156,8 @@ ALTER TABLE `producto`
 -- Filtros para la tabla `transaccion`
 --
 ALTER TABLE `transaccion`
-  ADD CONSTRAINT `fk_transaccion_producto1` FOREIGN KEY (`producto_idProducto`) REFERENCES `producto` (`idProducto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_transaccion_equipo1` FOREIGN KEY (`equipo_idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_transaccion_equipo1` FOREIGN KEY (`equipo_idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_transaccion_producto1` FOREIGN KEY (`producto_idProducto`) REFERENCES `producto` (`idProducto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
