@@ -45,7 +45,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="<?php echo URL; ?>plugins/Alertify/css/alertify.min.css"/>
   <!-- Bootstrap theme -->
-  <link rel="stylesheet" href="<?php echo URL; ?>plugins/Alertify/css/css/themes/bootstrap.min.css"/>
+  <link rel="stylesheet" href="<?php echo URL; ?>plugins/Alertify/css/themes/bootstrap.min.css"/>
 
 
   <style>
@@ -132,14 +132,14 @@
           <li><a href="index.html">III Jornada Pedagógica - CESGE - SENA</a></li>
           <li><a href="artefactos.html">Ver artefactos y ranking</a></li>
           <?php if(isset($_SESSION['Rol'])){ ?>
-            <?php if($_SESSION['Rol'] == 1){ ?>
-              <li><a href="equipo/index">Equipos</a></li>
-              <li><a href="producto/index">Productos</a></li>
-            <?php } ?>
-              <li><a href="#"><?php echo $_SESSION['User'] ?> </a></li>
-              <li><a href="home/logout">Cerrar sesión</a></li>
+          <?php if($_SESSION['Rol'] == 1){ ?>
+          <li><a href="equipo/index">Equipos</a></li>
+          <li><a href="producto/index">Productos</a></li>
+          <?php } ?>
+          <li><a href="#"><?php echo $_SESSION['User'] ?> </a></li>
+          <li><a href="home/logout">Cerrar sesión</a></li>
           <?php }else{ ?>
-            <li><a href="home/login">Iniciar sesión</a></li>
+          <li><a href="home/login">Iniciar sesión</a></li>
           <?php } ?>
 
 
@@ -350,6 +350,7 @@ data-easing="easeOutExpo">
 </script>
 
 <script src="<?php echo URL; ?>js/bootstrap.min.js" type="text/javascript"></script>
+
 <script src="<?php echo URL; ?>js/back-to-top.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
@@ -370,6 +371,8 @@ data-easing="easeOutExpo">
 
 <script src="<?php echo URL; ?>js/application.js"></script>
 
+
+
 <script type="text/javascript">
   jQuery(document).ready(function () {
     Layout.init();
@@ -381,6 +384,16 @@ data-easing="easeOutExpo">
     // alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
   });
 </script>
+
+
+<?php 
+
+if (isset($js)) {
+  echo $js;
+}
+
+?>
+
 <!-- END PAGE LEVEL JAVASCRIPTS -->
 </body>
 <!-- END BODY -->

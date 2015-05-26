@@ -14,97 +14,8 @@
         <h2><a href="http://keenthemes.com/preview/metronic/theme/templates/frontend/portfolio.html">Ver artefactos recientes</a></h2>
         <p class="text-justify">Esta sección muestra los diferentes artefactos creados en la <b> III Jornada Pedagógica </b> realizada en el CESGE. Todos los equipos usaron su creatividad para realizar el mejor artefacto. Para invertir en alguno, siga las instrucciones que se muestran en el panel inferior.</p>
     </div>
-    <div class="col-md-9">
-        <div class="owl-carousel owl-carousel3">
-            <div class="recent-work-item">
-                <em>
-                    <img src="img/works/img1.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="img/works/img1.jpg" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="img/works/img2.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="img/works/img2.jpg" class="fancybox-button" title="Project Name #2" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="img/works/img4.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="img/works/img5.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="img/works/img5.jpg" class="fancybox-button" title="Project Name #5" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="img/works/img6.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="img/works/img6.jpg" class="fancybox-button" title="Project Name #6" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="img/works/img4.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-        </div>
+    <div id="content-artefactos" class="col-md-9">
+        
     </div>
 </div>
 <!-- END RECENT WORKS -->
@@ -240,4 +151,10 @@
     </div>
     <!-- END TESTIMONIALS -->
 </div>
-            <!-- END TABS AND TESTIMONIALS -->
+<!-- END TABS AND TESTIMONIALS -->
+
+<?php   
+
+$js = '<script src="'.URL.'js/application-home.js" type="text/javascript"></script>';
+
+?>
