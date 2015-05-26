@@ -2339,11 +2339,10 @@ zoom: 1;
 
 @font-face {
   font-family: 'revicons';
-  src: url('http://www.keenthemes.com/preview/metronic/theme/assets/global/plugins/slider-revolution-slider/rs-plugin/font/revicons.eot?5510888');
-  src: url('http://www.keenthemes.com/preview/metronic/theme/assets/global/plugins/slider-revolution-slider/rs-plugin/font/revicons.eot?5510888#iefix') format('embedded-opentype'),
-       url('http://www.keenthemes.com/preview/metronic/theme/assets/global/plugins/slider-revolution-slider/rs-plugin/font/revicons.woff?5510888') format('woff'),
-       url('http://www.keenthemes.com/preview/metronic/theme/assets/global/plugins/slider-revolution-slider/rs-plugin/font/revicons.ttf?5510888') format('truetype'),
-       url('http://www.keenthemes.com/preview/metronic/theme/assets/global/plugins/slider-revolution-slider/rs-plugin/font/revicons.svg?5510888#revicons') format('svg');
+  src: url('../fonts/revicons.eot?5510888');
+  src: url('../fonts/revicons.eot?5510888#iefix') format('embedded-opentype'),
+  url('../fonts/revicons.woff?5510888') format('woff'),
+  url('../fonts/revicons.ttf?5510888') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

@@ -38,7 +38,14 @@
   <link href="<?php echo URL; ?>css/style-responsive.css" rel="stylesheet">
   <link href="<?php echo URL; ?>css/themes/red.css" rel="stylesheet" id="style-color">
   <link href="<?php echo URL; ?>css/custom.css" rel="stylesheet">
+
+  <link href="<?php echo URL; ?>plugins/DataTables/css/dataTables.bootstrap.css" rel="stylesheet">
   <!-- Theme styles END -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="<?php echo URL; ?>plugins/Alertify/css/alertify.min.css"/>
+  <!-- Bootstrap theme -->
+  <link rel="stylesheet" href="<?php echo URL; ?>plugins/Alertify/css/css/themes/bootstrap.min.css"/>
 
 
   <style>
@@ -100,11 +107,19 @@
     font-size: 12px;
     padding: 15px 0;
     bottom: 0px;
-    position: absolute;
+    position: fixed;
     width: 100%;
+    z-index: 2;
   }
 
+  .main{
+    margin-bottom: 80px;
+  }
 
+  .alertify-notifier .ajs-message.ajs-success {
+    background: rgba(91,189,114,.95);
+    color: #fff;
+  }
 
 </style>
 
@@ -346,7 +361,11 @@ data-easing="easeOutExpo">
 <!-- END RevolutionSlider -->
 <script src="<?php echo URL; ?>js/layout.js" type="text/javascript"></script>
 
+<script src="<?php echo URL; ?>plugins/DataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="<?php echo URL; ?>plugins/DataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
 
+<!-- JavaScript -->
+<script src="<?php echo URL; ?>plugins/Alertify/js/alertify.min.js"></script>
 
 <script src="<?php echo URL; ?>js/application.js"></script>
 
@@ -357,6 +376,8 @@ data-easing="easeOutExpo">
     RevosliderInit.initRevoSlider();
     Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
     Layout.initNavScrolling();
+    alertify.set('notifier','position', 'top-right');
+    alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
   });
 </script>
 <!-- END PAGE LEVEL JAVASCRIPTS -->
