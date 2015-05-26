@@ -8,7 +8,6 @@
 	{
 
 		public $modelEquipo = null;
-		$_SESSION["public"] = 2;
 
 		function __construct(){
 			$this->modelEquipo = $this->loadModel("mdlEquipo");
