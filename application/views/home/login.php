@@ -181,24 +181,25 @@
 	<div class="row login_box">
 	    <div class="col-md-12 col-xs-12" align="center">
             <div class="line"><h3 id="lblHora"></h3></div>
-            <div class="outter"><img src="<?php echo URL ?>/img/male.png" class="image-circle"/></div>   
+            <div class="outter"><img id="imgLogin" src="<?php echo URL ?>/img/male.png" class="image-circle"/></div>   
             <h3 id="output">Bienvenido</h3>
 	    </div>
         
         <div class="col-md-12 col-xs-12 login_control">
-                
-                <div class="control">
-                    <div class="label">Usuario</div>
-                    <input type="text" class="form-control" id="txtUsuario" />
-                </div>
-                
-                <div class="control">
-                     <div class="label">Contraseña</div>
-                    <input type="password" class="form-control" id="txtContrasena"/>
-                </div>
-                <div align="center">
-                     <button class="btn btn-orange">Ingresar</button>
-                </div>
+                <form method="post" action="<?php echo URL ?>home/login">
+	                <div class="control">
+	                    <div class="label">Usuario</div>
+	                    <input type="text" class="form-control" id="txtUsuario" />
+	                </div>
+	                
+	                <div class="control">
+	                     <div class="label">Contraseña</div>
+	                    <input type="password" class="form-control" id="txtContrasena"/>
+	                </div>
+	                <div align="center">
+	                     <button class="btn btn-orange" type="submit">Ingresar</button>
+	                </div>
+                </form>
                 
         </div>
         
@@ -206,8 +207,16 @@
             
     </div>
 </div>
-	
+	<script>
+	  var url = "<?php echo URL; ?>";
+	  <?php echo $mensaje; ?>
+	</script>
+
+
 	<script src="<?php echo URL; ?>js/jquery.min.js" type="text/javascript"></script>
+
+
+	<script src="<?php echo URL; ?>js/application.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 

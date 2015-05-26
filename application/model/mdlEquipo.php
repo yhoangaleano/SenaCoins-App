@@ -84,6 +84,17 @@
 
 	    	return $gsent->fetch();
 	    }
+
+	    public function VlUsuario(){
+	    	
+	    	$gsent = $this->db->prepare("call SP_ValidarUsuario(:nu)");
+	    	
+	    	$gsent->bindValue(":nu",$this->__GET("_nombre_usuario"), PDO::PARAM_STR);
+
+			$gsent->execute();
+
+	    	return $gsent->fetch();
+	    }
 	}
 
  ?>

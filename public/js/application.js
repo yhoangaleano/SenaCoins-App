@@ -38,6 +38,10 @@ $(function() {
         });
     }
 
+    $("#txtUsuario").change(function(){
+        equipo.validar();
+    });
+
 });
 
 var equipo = {
@@ -55,7 +59,7 @@ var equipo = {
         }).done(function(response){
             alert(response.item);
         }).fail(function(response){
-            alert(response);
+            alert("Error");
         });
     },
     Listar:function(){
@@ -76,8 +80,31 @@ var equipo = {
             });
 
         }).fail(function(response){
-            alert(response);
+            alert("Error");
         });
     },
+    validar:function(){
+        $.ajax({
+            'type':'post',
+            'dataType':'json',
+            'url':url+'home/ValiUsuario',
+            'data':{
+                'User':$("#txtUsuario").val()
+            }
+        }).done(function(response){
+            
+            console.log(response.item);
 
+            $("#imgLogin").removeAttr("src");
+
+            if(response.item != null){
+                $("#imgLogin").attr("src", url+"/upload/artefactos/"+response.item);
+            }else{
+                $("#imgLogin").attr("src", url+"/img/male.png");
+            }
+
+        }).fail(function(response){
+            alert("Error");
+        });
+    }
 }

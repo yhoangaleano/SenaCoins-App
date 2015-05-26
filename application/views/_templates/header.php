@@ -129,9 +129,21 @@
       <!-- BEGIN NAVIGATION -->
       <div class="header-navigation pull-right font-transform-inherit margin-top">
         <ul>
-          <li class="active"><a href="index.html">III Jornada Pedagógica - CESGE - SENA</a></li>
+          <li><a href="index.html">III Jornada Pedagógica - CESGE - SENA</a></li>
           <li><a href="artefactos.html">Ver artefactos y ranking</a></li>
-          <li><a href="login.html">Iniciar sesión</a></li>
+          <?php if(isset($_SESSION['Rol'])){ ?>
+            <?php if($_SESSION['Rol'] == 1){ ?>
+              <li><a href="equipo/index">Equipos</a></li>
+              <li><a href="producto/index">Productos</a></li>
+            <?php } ?>
+              <li><a href="#"><?php echo $_SESSION['User'] ?> </a></li>
+              <li><a href="home/logout">Cerrar sesión</a></li>
+          <?php }else{ ?>
+            <li><a href="home/login">Iniciar sesión</a></li>
+          <?php } ?>
+
+
+          
         </ul>
       </div>
       <!-- END NAVIGATION -->

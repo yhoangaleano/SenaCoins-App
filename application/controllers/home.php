@@ -10,39 +10,64 @@
  */
 class Home extends Controller
 {
-    /**
-     * PAGE: index
-     * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
-     */
+    public $modelEquipo = null;
+
+    function __construct(){
+        $this->modelEquipo = $this->loadModel("mdlEquipo");
+    }
+
 
     public function index()
     {
         $this->render("index", array('slides' => true));
     }
 
-    public function login()
-    {
-        $this->render("login", null, false);
+
+    public function login(){
+      
+        $mensaje="";
+        if ($_POST != null) {
+            var_dump($_POST);
+            exit;
+            $user = $_POST['txtUsuario'];
+            $psw = $_POST['txtContrasena'];
+            $this->modelEquipo->__SET('_nombre_usuario', $user);
+            $usuarios = $this->modelEquipo->login();
+            if ($usuarios != false) {
+                if ($usuarios->contrasena == $psw) {
+                    $_SESSION['ID'] = $usuarios->idEquipo;
+                    $_SESSION['Rol'] = $usuarios->administrador;
+                    $_SESSION['User'] = $user;
+                    header("Location:".URL."equipo/Index");
+                }else{
+                     $mensaje="alert('password incorrecto')";
+                }
+            }else{
+                $mensaje="alert('El Usuario no existe')";
+            }
+            
+        }
+        $this->render("login", array('mensaje'=>$mensaje), false);
     }
 
-    /**
-     * PAGE: exampleone
-     * This method handles what happens when you move to http://yourproject/home/exampleone
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
-    public function exampleOne()
-    {
-        $this->render("example_one");
-    }
+    public function ValiUsuario(){
 
-    /**
-     * PAGE: exampletwo
-     * This method handles what happens when you move to http://yourproject/home/exampletwo
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
-    public function exampleTwo()
-    {
-        $this->render("example_two");
+        if($this->isAjax()){
+
+            $this->modelEquipo->__SET('_nombre_usuario', $_POST["User"]);
+
+            $usuario = $this->modelEquipo->VlUsuario();
+
+            if($usuario != false){
+                echo json_encode(array("item"=>$usuario->imagen));
+            }else{
+                echo json_encode(array("item"=>null));
+            }
+
+        }else{
+            header("location: ".URL."home/index");
+        }
+
     }
 
 }

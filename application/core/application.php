@@ -68,6 +68,8 @@ class Application
         }
     }
 
+    
+
     /**
      * Get and split the URL
      */
