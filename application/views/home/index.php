@@ -1,7 +1,7 @@
 <!-- BEGIN BLOCKQUOTE BLOCK -->
 <div class="row quote-v1 margin-bottom-30">
     <div class="col-md-9">
-        <span>Artefactos realiazados en la III Jornada Pedagógica</span>
+        <span>Artefactos realizados en la III Jornada Pedagógica</span>
     </div>
     <div class="col-md-3 pull-right">
         <a href="<?php echo URL; ?>producto/galeria" class="btn-block text-center btn-transparent"><i class="fa fa-search margin-right-10"></i>Ver artefactos</a>

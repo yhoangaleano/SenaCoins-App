@@ -22,9 +22,38 @@
 			$this->render("galeria");
 		}
 
+		public function detalle($id){
+			$this->modelProducto->__SET('_idProducto', $id);
+			$artefacto = $this->modelProducto->Listar_Detalle_Artefacto();
+
+			$imagenes = $this->modelProducto->Listar_Imagenes_Asociadas();
+			// var_dump($imagenes[0]);
+			// exit();
+			$this->render("detalleArtefacto", array("id" => $id, "artefacto" => $artefacto, "imagenes" => $imagenes));
+		}
+
 		public function Listar(){
 			$lista = $this->modelProducto->listar();
 			echo json_encode($lista);
+		}
+
+		public function transaccion(){
+			$mensaje = 0;
+			if ($_POST != null) {
+				$idArtefacto = $_POST['idArtefacto'];
+				$cantidadCoins = $_POST['cantidadCoins'];
+				$this->modelProducto->__SET('_idProducto', $idArtefacto);
+				$this->modelProducto->__SET('_monedas', $cantidadCoins);
+				$registrar = $this->modelProducto->generarTransaccion();
+				if ($registrar == true) {
+					$mensaje = 1;
+				}
+				else{
+					$mensaje= 0;
+				}
+
+			}
+			echo json_encode(['mensaje'=>$mensaje]);
 		}
 
 		public function Create(){

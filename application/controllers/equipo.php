@@ -15,6 +15,12 @@
 			echo json_encode($lista);
 		}
 
+		public function cantidadCoins(){
+			$monedas = $this->modelEquipo->cantidadCoins();
+			$artefacto = $this->modelEquipo->artefactoAsociado();
+			echo json_encode(array("monedas"=>$monedas, "artefacto" => $artefacto));
+		}
+
 		public function Index(){
 			$this->render("Index");
 		}

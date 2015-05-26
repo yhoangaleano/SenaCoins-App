@@ -55,6 +55,20 @@
 			return $s->c;
 		}
 
+		public function cantidadCoins(){
+			$stmt = $this->db->prepare("SELECT monedas FROM equipo WHERE idEquipo = ?");
+			$stmt->bindValue(1, $_SESSION["ID"], PDO::PARAM_INT);
+			$stmt->execute();
+			return $stmt->fetch();
+		}	
+
+		public function artefactoAsociado(){
+			$stmt = $this->db->prepare("SELECT idProducto FROM producto WHERE equipo_idEquipo = ?");
+			$stmt->bindValue(1, $_SESSION["ID"], PDO::PARAM_INT);
+			$stmt->execute();
+			return $stmt->fetch();
+		}		
+
 		public function Modificar(){
 	    	$gsent = $this->db->prepare("call SP_ModificarEquipo(:idE, :ne, :nu, :c)");
 

@@ -47,6 +47,8 @@
   <!-- Bootstrap theme -->
   <link rel="stylesheet" href="<?php echo URL; ?>plugins/Alertify/css/themes/bootstrap.min.css"/>
 
+  <link href="<?php echo URL; ?>plugins/rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+  <link href="<?php echo URL; ?>plugins/rangeSlider/css/ion.rangeSlider.skinNice.css" rel="stylesheet">
 
   <style>
     .slide_desc > p {
@@ -132,14 +134,14 @@
           <li><a href="<?php echo URL; ?>home/index">III Jornada Pedagógica - CESGE - SENA</a></li>
           <li><a href="<?php echo URL; ?>producto/galeria">Ver artefactos y ranking</a></li>
           <?php if(isset($_SESSION['Rol'])){ ?>
-            <?php if($_SESSION['Rol'] == 1){ ?>
-              <li><a href="<?php echo URL; ?>equipo/index">Equipos</a></li>
-              <li><a href="<?php echo URL; ?>producto/index">Artefactos</a></li>
-            <?php } ?>
-            <li><a href="<?php echo URL; ?>producto/guias">Adjuntar guia</a></li>
-            <li><a href="<?php echo URL; ?>home/logout"><p>Bienvenido <?php echo $_SESSION['Equipo'] ?> </p><p>Cerrar sesión</p></a></li>
+          <?php if($_SESSION['Rol'] == 1){ ?>
+          <li><a href="<?php echo URL; ?>equipo/index">Equipos</a></li>
+          <li><a href="<?php echo URL; ?>producto/index">Artefactos</a></li>
+          <?php } ?>
+          <li><a href="<?php echo URL; ?>producto/guias">Adjuntar guia</a></li>
+          <li><a href="<?php echo URL; ?>home/logout"><p>Bienvenido <?php echo $_SESSION['Equipo'] ?> </p><p>Cerrar sesión</p></a></li>
           <?php }else{ ?>
-            <li><a href="<?php echo URL; ?>home/login">Iniciar sesión</a></li>
+          <li><a href="<?php echo URL; ?>home/login">Iniciar sesión</a></li>
           <?php } ?>
 
 
@@ -371,10 +373,13 @@ data-easing="easeOutExpo">
 
 <script src="<?php echo URL; ?>js/application.js"></script>
 
+<script src="<?php echo URL; ?>plugins/rangeSlider/js/ion.rangeSlider.min.js"></script>
+
 
 
 <script type="text/javascript">
   jQuery(document).ready(function () {
+
     Layout.init();
     Layout.initOWL();
     RevosliderInit.initRevoSlider();
@@ -399,7 +404,7 @@ if (isset($js)) {
   if(isset($equipo)){
     echo $equipo;
   }
-   ?>
+  ?>
   
 </script>
 
