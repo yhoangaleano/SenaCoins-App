@@ -4,14 +4,14 @@
         <span>Artefactos realiazados en la III Jornada Pedagógica</span>
     </div>
     <div class="col-md-3 pull-right">
-        <a href="javascript:;" class="btn-block text-center btn-transparent"><i class="fa fa-search margin-right-10"></i>Ver artefactos</a>
+        <a href="<?php echo URL; ?>producto/galeria" class="btn-block text-center btn-transparent"><i class="fa fa-search margin-right-10"></i>Ver artefactos</a>
     </div>
 </div>
 <!-- END BLOCKQUOTE BLOCK -->
 <!-- BEGIN RECENT WORKS -->
 <div class="row recent-work margin-bottom-40">
     <div class="col-md-3">
-        <h2><a href="http://keenthemes.com/preview/metronic/theme/templates/frontend/portfolio.html">Ver artefactos recientes</a></h2>
+        <h2><a href="<?php echo URL; ?>producto/galeria">Ver artefactos recientes</a></h2>
         <p class="text-justify">Esta sección muestra los diferentes artefactos creados en la <b> III Jornada Pedagógica </b> realizada en el CESGE. Todos los equipos usaron su creatividad para realizar el mejor artefacto. Para invertir en alguno, siga las instrucciones que se muestran en el panel inferior.</p>
     </div>
     <div id="content-artefactos" class="col-md-9">

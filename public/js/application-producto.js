@@ -18,6 +18,8 @@ $(function() {
 var producto = {
 
     listaArtefactos :function(){
+        console.log("refresh");
+
         $.ajax({
             'type':'GET',
             'dataType':'json',

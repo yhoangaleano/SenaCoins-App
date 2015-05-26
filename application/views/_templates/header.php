@@ -130,7 +130,7 @@
       <div class="header-navigation pull-right font-transform-inherit margin-top">
         <ul>
           <li><a href="<?php echo URL; ?>home/index">III Jornada Pedagógica - CESGE - SENA</a></li>
-          <li><a href="<?php echo URL; ?>artefactos/index">Ver artefactos y ranking</a></li>
+          <li><a href="<?php echo URL; ?>producto/galeria">Ver artefactos y ranking</a></li>
           <?php if(isset($_SESSION['Rol'])){ ?>
             <?php if($_SESSION['Rol'] == 1){ ?>
               <li><a href="<?php echo URL; ?>equipo/index">Equipos</a></li>
