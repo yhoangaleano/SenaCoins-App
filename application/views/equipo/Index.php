@@ -20,7 +20,7 @@
 						<input type="password" class="form-control" id="txtContrasena" placeholder="Ejm: 123"  />
 					</div>
 					<div class="form-group">
-						<button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+						<button type="button" class="btn btn-primary pull-right" id="btnGuardar">Guardar</button>
 					</div>
 					<div class="form-group">
 						<button type="button" class="btn btn-block btn-primary" id="btnModificar" style="display:none">Modificar</button>
