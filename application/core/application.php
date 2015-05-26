@@ -19,6 +19,7 @@ class Application
     {
         // create array with URL parts in $url
         $this->splitUrl();
+        $this->isRequiredLogin();
 
         // check for controller: no controller given ? then load start-page
         if (!$this->url_controller) {
@@ -68,7 +69,32 @@ class Application
         }
     }
 
-    
+
+    public function isRequiredLogin()
+    {
+        $login = array("home/login"); 
+
+        // Aca van los metodos a los que puedo acceder sin login, tienen que ir en MINUSCULA TODO
+        $controllers = array("home/index", "home/", "home/login", "productos/galeria", "productos/listar", "productos/detalle", "error/index", "error/");
+
+
+        if (! in_array(strtolower($this->url_controller)."/".strtolower($this->url_action), $controllers)) 
+        {
+            if (!isset( $_SESSION["ID"] )) 
+            {
+               header("location: ".URL."home/login");
+           }
+       }
+
+       if (in_array(strtolower($this->url_controller)."/".strtolower($this->url_action), $login)) 
+       {
+        if (isset( $_SESSION["ID"] )) 
+        {
+            header("location: ".URL."home/index");
+        }
+    }
+}
+
 
     /**
      * Get and split the URL
