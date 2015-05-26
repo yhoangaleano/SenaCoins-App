@@ -3,21 +3,24 @@
 <div class="row">
 	<div class="col-md-6">
 
-	<div class="panel panel-orange">
+		<div class="panel panel-orange">
 			<div class="panel-heading">Equipo</div>
 			<div class="panel-body">
 				<form method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" id="txtNombreEquipo" placeholder="Nombre Equipo"  />
+						<label for="">Nombre de equipo</label>
+						<input type="text" class="form-control" id="txtNombreEquipo" placeholder="Ejm: Multimedia"  />
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="txtNombreUsuario" placeholder="Nombre Usuario"  />
+						<label for="">Nombre usuario</label>
+						<input type="text" class="form-control" id="txtNombreUsuario" placeholder="Ejm: Multimedia-Usuario"  />
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="txtContrasena" placeholder="Contraseña"  />
+						<label for="">Contraseña</label>
+						<input type="password" class="form-control" id="txtContrasena" placeholder="Ejm: 123"  />
 					</div>
 					<div class="form-group">
-						<button type="button" class="btn btn-primary btn-block" id="btnGuardar">Guardar</button>
+						<button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
 					</div>
 					<div class="form-group">
 						<button type="button" class="btn btn-block btn-primary" id="btnModificar" style="display:none">Modificar</button>
