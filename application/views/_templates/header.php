@@ -106,10 +106,6 @@
     color: #fff;
     font-size: 12px;
     padding: 15px 0;
-    bottom: 0px;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
   }
 
   .main{
