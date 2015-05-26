@@ -8,16 +8,19 @@
 	{
 
 		public $modelEquipo = null;
-		$_SESSION["public"] = 2;
 
 		function __construct(){
 			$this->modelEquipo = $this->loadModel("mdlEquipo");
 
 		}		
 		
-		public function Index(){
+		public function Listar(){
 			$lista = $this->modelEquipo->listar();
-			$this->render("Index", array('listaEquipos' => $lista));
+			echo json_encode($lista);
+		}
+
+		public function Index(){
+			$this->render("Index");
 		}
 
 		public function Create(){
