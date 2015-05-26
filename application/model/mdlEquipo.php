@@ -34,9 +34,9 @@
 	    public function Guardar(){
 	    	$gsent = $this->db->prepare("call SP_GuardarEquipo(:ne, :nu, :c)");
 
-	    	$gsent->bindParam(":ne", $this->__GET("_nombre_equipo"), PDO::PARAM_STR);
-	    	$gsent->bindParam(":nu", $this->__GET("_nombre_usuario"), PDO::PARAM_STR);
-	    	$gsent->bindParam(":c", $this->__GET("_contrasena"), PDO::PARAM_STR);
+	    	$gsent->bindValue(":ne", $this->__GET("_nombre_equipo"), PDO::PARAM_STR);
+	    	$gsent->bindValue(":nu", $this->__GET("_nombre_usuario"), PDO::PARAM_STR);
+	    	$gsent->bindValue(":c", $this->__GET("_contrasena"), PDO::PARAM_STR);
 
 	    	$stm = $gsent->execute();
 
@@ -45,12 +45,12 @@
 	
 
 		public function Modificar(){
-	    	$gsent = $this->db->prepare("call SP_MdificarEquipo(:idE, :ne, :nu, :c)");
+	    	$gsent = $this->db->prepare("call SP_ModificarEquipo(:idE, :ne, :nu, :c)");
 
-	    	$gsent->bindParam(":idE", $this->__GET("_idEquipo"), PDO::PARAM_INT);
-	    	$gsent->bindParam(":ne", $this->__GET("_nombre_equipo"), PDO::PARAM_STR);
-	    	$gsent->bindParam(":nu", $this->__GET("_nombre_usuario"), PDO::PARAM_STR);
-	    	$gsent->bindParam(":c", $this->__GET("_contrasena"), PDO::PARAM_STR);
+	    	$gsent->bindValue(":idE", $this->__GET("_idEquipo"), PDO::PARAM_INT);
+	    	$gsent->bindValue(":ne", $this->__GET("_nombre_equipo"), PDO::PARAM_STR);
+	    	$gsent->bindValue(":nu", $this->__GET("_nombre_usuario"), PDO::PARAM_STR);
+	    	$gsent->bindValue(":c", $this->__GET("_contrasena"), PDO::PARAM_STR);
 
 	    	$stm = $gsent->execute();
 
@@ -63,6 +63,26 @@
 	    	$stm->execute();
 
 	    	return $stm->fetchAll();
+	    }
+
+	    public function login(){
+	    	$gsent = $this->db->prepare("call SP_Login(:nu)");
+	    	
+	    	$gsent->bindValue(":nu",$this->__GET("_nombre_usuario"), PDO::PARAM_STR);
+
+			$gsent->execute();
+
+	    	return $gsent->fetch();
+	    }
+
+	    public function BusquedaParametro(){
+	    	$gsent = $this->db->prepare("call SP_BusquedaParametro(:idE)");
+	    	
+	    	$gsent->bindValue(":idE",$this->__GET("_idEquipo"), PDO::PARAM_INT);
+
+			$gsent->execute();
+
+	    	return $gsent->fetch();
 	    }
 	}
 
