@@ -44,26 +44,26 @@
   <style>
     .slide_desc > p {
       line-height: 10px;
-  }
+    }
 
-  .logo > img{
+    .logo > img{
       width: 80px;
       height: 80px;
-  }
+    }
 
-  .margin-top{
+    .margin-top{
       margin-top: 25px;
-  }
+    }
 
-  .margin-top-2{
-   margin-top: 15px;
-}
+    .margin-top-2{
+     margin-top: 15px;
+   }
 
-.margin-top-3{
-   margin-top: 10px;
-}
+   .margin-top-3{
+     margin-top: 10px;
+   }
 
-output {
+   output {
     display: block;
     padding-top: 0px;
     font-size: 20px;
@@ -72,7 +72,13 @@ output {
     text-align: center;
     margin-top: 15px;
     font-weight: 700;
-}
+  }
+
+  .panel-orange > .panel-heading {
+    color: #fff;
+    background: #cc3304;
+    border-color: #e64f00
+  }
 
 </style>
 
@@ -96,238 +102,238 @@ output {
           <li class="active"><a href="index.html">III Jornada Pedagógica - CESGE - SENA</a></li>
           <li><a href="artefactos.html">Ver artefactos y ranking</a></li>
           <li><a href="login.html">Iniciar sesión</a></li>
-      </ul>
+        </ul>
+      </div>
+      <!-- END NAVIGATION -->
+    </div>
   </div>
-  <!-- END NAVIGATION -->
+  <!-- Header END -->
+
+  <?php 
+
+  if (isset($slides)) {
+    if ($slides) {
+
+
+     ?>
+
+     <!-- BEGIN SLIDER -->
+     <div class="page-slider margin-bottom-40">
+      <div class="fullwidthbanner-container revolution-slider">
+        <div class="fullwidthabnner">
+          <ul id="revolutionul">
+            <!-- THE THIRD SLIDE -->
+            <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="img/revolutionslider/thumbs/thumb2.jpg">
+              <img src="img/revolutionslider/bg3.jpg" alt="">
+              <div class="caption lfl slide_item_left"
+              data-x="30"
+              data-y="95"
+              data-speed="400"
+              data-start="1500"
+              data-easing="easeOutBack">
+              <iframe src="https://www.youtube.com/embed/AA2D5qv5GtI" width="420" height="240" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="caption lfr slide_title"
+            data-x="470"
+            data-y="100"
+            data-speed="400"
+            data-start="2000"
+            data-easing="easeOutExpo">
+            Reflexión inicial
+          </div>
+          <div class="caption lfr slide_subtitle"
+          data-x="470"
+          data-y="170"
+          data-speed="400"
+          data-start="2500"
+          data-easing="easeOutExpo">
+          Pink Floyd - Another Brick In The Wall (Sub. Esp.).
+        </div>
+        <div class="caption lfr slide_desc"
+        data-x="470"
+        data-y="220"
+        data-speed="400"
+        data-start="3000"
+        data-easing="easeOutExpo">
+        Ver video!
+      </div>
+    </li>
+    <!-- THE THIRD SLIDE -->
+    <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="img/revolutionslider/thumbs/thumb2.jpg">
+      <img src="img/revolutionslider/bg3.jpg" alt="">
+      <div class="caption lfl slide_item_left"
+      data-x="30"
+      data-y="95"
+      data-speed="400"
+      data-start="1500"
+      data-easing="easeOutBack">
+      <iframe src="https://www.youtube.com/embed/SbiGZYwZAKo" width="420" height="240" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="caption lfr slide_title"
+    data-x="470"
+    data-y="100"
+    data-speed="400"
+    data-start="2000"
+    data-easing="easeOutExpo">
+    Métodos a seguir.
+  </div>
+  <div class="caption lfr slide_subtitle"
+  data-x="470"
+  data-y="170"
+  data-speed="400"
+  data-start="2500"
+  data-easing="easeOutExpo">
+  Métodos Scamper.
+</div>
+<div class="caption lfr slide_desc"
+data-x="470"
+data-y="220"
+data-speed="400"
+data-start="3000"
+data-easing="easeOutExpo">
+<p>
+  Herramienta que permite activar la creatividad y las habilidades, para
+</p>
+<p>
+  resolver problemas de un producto o servicio ya existente, a través de
+  <p>
+    7 pasos definidas en las siglas S.C.A.M.P.E.R
+  </p>
+</div>
+</li>
+<!-- THE THIRD SLIDE -->
+<li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="img/revolutionslider/thumbs/thumb2.jpg">
+  <img src="img/revolutionslider/bg3.jpg" alt="">
+  <div class="caption lfl slide_item_left"
+  data-x="30"
+  data-y="95"
+  data-speed="400"
+  data-start="1500"
+  data-easing="easeOutBack">
+  <iframe src="https://www.youtube.com/embed/PlLHc60egiQ" width="420" height="240" style="border:0" allowfullscreen></iframe>
+</div>
+<div class="caption lfr slide_title"
+data-x="470"
+data-y="100"
+data-speed="400"
+data-start="2000"
+data-easing="easeOutExpo">
+Métodos a seguir.
+</div>
+<div class="caption lfr slide_subtitle"
+data-x="470"
+data-y="170"
+data-speed="400"
+data-start="2500"
+data-easing="easeOutExpo">
+Métodos Scrum.
+</div>
+<div class="caption lfr slide_desc"
+data-x="470"
+data-y="220"
+data-speed="400"
+data-start="3000"
+data-easing="easeOutExpo">
+<p>
+  Marco de desarrollo ágil de un proyecto, a través de roles,
+</p>
+<p>
+  artefactos y reuniones, el cual permite obtener incrementos
+</p>
+<p>
+  funcionales del producto, que se entregará al final del proyecto,
+</p>
+<p>
+  desarrollado en interacciones llamadas Sprint 1, 2, n (en un Sprint
+</p>
+<p>
+  pueden converger varias fases).
+</p>
+</div>
+</li>
+</ul>
+<div class="tp-bannertimer tp-bottom"></div>
 </div>
 </div>
-<!-- Header END -->
+</div>
+<!-- END SLIDER -->
 
 <?php 
 
-    if (isset($slides)) {
-        if ($slides) {
-            
-        
- ?>
-
-<!-- BEGIN SLIDER -->
-    <div class="page-slider margin-bottom-40">
-        <div class="fullwidthbanner-container revolution-slider">
-            <div class="fullwidthabnner">
-                <ul id="revolutionul">
-                    <!-- THE THIRD SLIDE -->
-                    <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="img/revolutionslider/thumbs/thumb2.jpg">
-                        <img src="img/revolutionslider/bg3.jpg" alt="">
-                        <div class="caption lfl slide_item_left"
-                             data-x="30"
-                             data-y="95"
-                             data-speed="400"
-                             data-start="1500"
-                             data-easing="easeOutBack">
-                            <iframe src="https://www.youtube.com/embed/AA2D5qv5GtI" width="420" height="240" style="border:0" allowfullscreen></iframe>
-                        </div>
-                        <div class="caption lfr slide_title"
-                             data-x="470"
-                             data-y="100"
-                             data-speed="400"
-                             data-start="2000"
-                             data-easing="easeOutExpo">
-                            Reflexión inicial
-                        </div>
-                        <div class="caption lfr slide_subtitle"
-                             data-x="470"
-                             data-y="170"
-                             data-speed="400"
-                             data-start="2500"
-                             data-easing="easeOutExpo">
-                            Pink Floyd - Another Brick In The Wall (Sub. Esp.).
-                        </div>
-                        <div class="caption lfr slide_desc"
-                             data-x="470"
-                             data-y="220"
-                             data-speed="400"
-                             data-start="3000"
-                             data-easing="easeOutExpo">
-                            Ver video!
-                        </div>
-                    </li>
-                    <!-- THE THIRD SLIDE -->
-                    <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="img/revolutionslider/thumbs/thumb2.jpg">
-                        <img src="img/revolutionslider/bg3.jpg" alt="">
-                        <div class="caption lfl slide_item_left"
-                             data-x="30"
-                             data-y="95"
-                             data-speed="400"
-                             data-start="1500"
-                             data-easing="easeOutBack">
-                            <iframe src="https://www.youtube.com/embed/SbiGZYwZAKo" width="420" height="240" style="border:0" allowfullscreen></iframe>
-                        </div>
-                        <div class="caption lfr slide_title"
-                             data-x="470"
-                             data-y="100"
-                             data-speed="400"
-                             data-start="2000"
-                             data-easing="easeOutExpo">
-                            Métodos a seguir.
-                        </div>
-                        <div class="caption lfr slide_subtitle"
-                             data-x="470"
-                             data-y="170"
-                             data-speed="400"
-                             data-start="2500"
-                             data-easing="easeOutExpo">
-                            Métodos Scamper.
-                        </div>
-                        <div class="caption lfr slide_desc"
-                             data-x="470"
-                             data-y="220"
-                             data-speed="400"
-                             data-start="3000"
-                             data-easing="easeOutExpo">
-                            <p>
-                                Herramienta que permite activar la creatividad y las habilidades, para
-                            </p>
-                            <p>
-                                resolver problemas de un producto o servicio ya existente, a través de
-                            <p>
-                                7 pasos definidas en las siglas S.C.A.M.P.E.R
-                            </p>
-                        </div>
-                    </li>
-                    <!-- THE THIRD SLIDE -->
-                    <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="img/revolutionslider/thumbs/thumb2.jpg">
-                        <img src="img/revolutionslider/bg3.jpg" alt="">
-                        <div class="caption lfl slide_item_left"
-                             data-x="30"
-                             data-y="95"
-                             data-speed="400"
-                             data-start="1500"
-                             data-easing="easeOutBack">
-                            <iframe src="https://www.youtube.com/embed/PlLHc60egiQ" width="420" height="240" style="border:0" allowfullscreen></iframe>
-                        </div>
-                        <div class="caption lfr slide_title"
-                             data-x="470"
-                             data-y="100"
-                             data-speed="400"
-                             data-start="2000"
-                             data-easing="easeOutExpo">
-                            Métodos a seguir.
-                        </div>
-                        <div class="caption lfr slide_subtitle"
-                             data-x="470"
-                             data-y="170"
-                             data-speed="400"
-                             data-start="2500"
-                             data-easing="easeOutExpo">
-                            Métodos Scrum.
-                        </div>
-                        <div class="caption lfr slide_desc"
-                             data-x="470"
-                             data-y="220"
-                             data-speed="400"
-                             data-start="3000"
-                             data-easing="easeOutExpo">
-                            <p>
-                                Marco de desarrollo ágil de un proyecto, a través de roles,
-                            </p>
-                            <p>
-                                artefactos y reuniones, el cual permite obtener incrementos
-                            </p>
-                            <p>
-                                funcionales del producto, que se entregará al final del proyecto,
-                            </p>
-                            <p>
-                                desarrollado en interacciones llamadas Sprint 1, 2, n (en un Sprint
-                            </p>
-                            <p>
-                                pueden converger varias fases).
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-                <div class="tp-bannertimer tp-bottom"></div>
-            </div>
-        </div>
-    </div>
-    <!-- END SLIDER -->
-
-    <?php 
-
-        }
-    }
+}
+}
 ?>
 
 <div class="main">
-    <div class="container">
+  <div class="container">
 
-        <?php require content; ?>
+    <?php require content; ?>
 
-    </div>
+  </div>
 </div>
 
 <div class="footer">
-        <div class="container">
-            <div class="row">
-                <!-- BEGIN COPYRIGHT -->
-                <div class="col-md-6 col-sm-6 padding-top-10">
-                    2015 © ADSI Centro de Servicios y Gestión Empresarial.
-                </div>
-                <!-- END COPYRIGHT -->
-                <!-- BEGIN PAYMENTS -->
-                <div class="col-md-6 col-sm-6">
-                    <ul class="social-footer list-unstyled list-inline pull-right">
-                        <li><a href="javascript:;"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="javascript:;"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="javascript:;"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="javascript:;"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="javascript:;"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="javascript:;"><i class="fa fa-skype"></i></a></li>
-                        <li><a href="javascript:;"><i class="fa fa-github"></i></a></li>
-                        <li><a href="javascript:;"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="javascript:;"><i class="fa fa-dropbox"></i></a></li>
-                    </ul>
-                </div>
-                <!-- END PAYMENTS -->
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <!-- BEGIN COPYRIGHT -->
+      <div class="col-md-6 col-sm-6 padding-top-10">
+        2015 © ADSI Centro de Servicios y Gestión Empresarial.
+      </div>
+      <!-- END COPYRIGHT -->
+      <!-- BEGIN PAYMENTS -->
+      <div class="col-md-6 col-sm-6">
+        <ul class="social-footer list-unstyled list-inline pull-right">
+          <li><a href="javascript:;"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="javascript:;"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="javascript:;"><i class="fa fa-dribbble"></i></a></li>
+          <li><a href="javascript:;"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="javascript:;"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="javascript:;"><i class="fa fa-skype"></i></a></li>
+          <li><a href="javascript:;"><i class="fa fa-github"></i></a></li>
+          <li><a href="javascript:;"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="javascript:;"><i class="fa fa-dropbox"></i></a></li>
+        </ul>
+      </div>
+      <!-- END PAYMENTS -->
     </div>
-    <!-- END FOOTER -->
+  </div>
+</div>
+<!-- END FOOTER -->
 
-    <script src="<?php echo URL; ?>js/jquery.min.js" type="text/javascript"></script>
-    <script src="<?php echo URL; ?>js/jquery-migrate.min.js" type="text/javascript"></script>
-        
-        <script>
-        var url = "<?php echo URL; ?>";
-    </script>
+<script src="<?php echo URL; ?>js/jquery.min.js" type="text/javascript"></script>
+<script src="<?php echo URL; ?>js/jquery-migrate.min.js" type="text/javascript"></script>
 
-    <script src="<?php echo URL; ?>js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="<?php echo URL; ?>js/back-to-top.js" type="text/javascript"></script>
-    <!-- END CORE PLUGINS -->
-    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
-    <script src="<?php echo URL; ?>plugins/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
-    <script src="<?php echo URL; ?>plugins/owl-carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
-    <!-- BEGIN RevolutionSlider -->
-    <script src="<?php echo URL; ?>js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
-    <script src="<?php echo URL; ?>js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
-    <script src="<?php echo URL; ?>js/revo-slider-init.js" type="text/javascript"></script>
-    <!-- END RevolutionSlider -->
-    <script src="<?php echo URL; ?>js/layout.js" type="text/javascript"></script>
+<script>
+  var url = "<?php echo URL; ?>";
+</script>
 
-     
+<script src="<?php echo URL; ?>js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo URL; ?>js/back-to-top.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+<script src="<?php echo URL; ?>plugins/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+<script src="<?php echo URL; ?>plugins/owl-carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+<!-- BEGIN RevolutionSlider -->
+<script src="<?php echo URL; ?>js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+<script src="<?php echo URL; ?>js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
+<script src="<?php echo URL; ?>js/revo-slider-init.js" type="text/javascript"></script>
+<!-- END RevolutionSlider -->
+<script src="<?php echo URL; ?>js/layout.js" type="text/javascript"></script>
 
-    <script src="<?php echo URL; ?>js/application.js"></script>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            Layout.init();
-            Layout.initOWL();
-            RevosliderInit.initRevoSlider();
-            Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
-            Layout.initNavScrolling();
-        });
-    </script>
-    <!-- END PAGE LEVEL JAVASCRIPTS -->
+
+<script src="<?php echo URL; ?>js/application.js"></script>
+
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    Layout.init();
+    Layout.initOWL();
+    RevosliderInit.initRevoSlider();
+    Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+    Layout.initNavScrolling();
+  });
+</script>
+<!-- END PAGE LEVEL JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
 </html>
