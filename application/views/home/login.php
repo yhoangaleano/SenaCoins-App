@@ -189,12 +189,12 @@
                 <form method="post" action="<?php echo URL ?>home/login">
 	                <div class="control">
 	                    <div class="label">Usuario</div>
-	                    <input type="text" class="form-control" id="txtUsuario" />
+	                    <input type="text" class="form-control" id="txtUsuario" name="txtUsuario" />
 	                </div>
 	                
 	                <div class="control">
 	                     <div class="label">Contraseña</div>
-	                    <input type="password" class="form-control" id="txtContrasena"/>
+	                    <input type="password" class="form-control" id="txtContrasena" name="txtContrasena"/>
 	                </div>
 	                <div align="center">
 	                     <button class="btn btn-orange" type="submit">Ingresar</button>

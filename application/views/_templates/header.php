@@ -121,7 +121,7 @@
   <!-- BEGIN HEADER -->
   <div class="header">
     <div class="container">
-      <a class="site-logo logo" href="index.html"><img src="img/logos/logo-corp-red.png" alt="SENA Coins"></a>
+      <a class="site-logo logo" href="<?php echo URL; ?>home/index"><img src="<?php echo URL; ?>img/logos/logo-corp-red.png" alt="SENA Coins"></a>
 
 
       <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
@@ -129,17 +129,17 @@
       <!-- BEGIN NAVIGATION -->
       <div class="header-navigation pull-right font-transform-inherit margin-top">
         <ul>
-          <li><a href="index.html">III Jornada Pedagógica - CESGE - SENA</a></li>
-          <li><a href="artefactos.html">Ver artefactos y ranking</a></li>
+          <li><a href="<?php echo URL; ?>home/index">III Jornada Pedagógica - CESGE - SENA</a></li>
+          <li><a href="<?php echo URL; ?>artefactos/index">Ver artefactos y ranking</a></li>
           <?php if(isset($_SESSION['Rol'])){ ?>
-          <?php if($_SESSION['Rol'] == 1){ ?>
-          <li><a href="equipo/index">Equipos</a></li>
-          <li><a href="producto/index">Productos</a></li>
-          <?php } ?>
-          <li><a href="#"><?php echo $_SESSION['User'] ?> </a></li>
-          <li><a href="home/logout">Cerrar sesión</a></li>
+            <?php if($_SESSION['Rol'] == 1){ ?>
+              <li><a href="<?php echo URL; ?>equipo/index">Equipos</a></li>
+              <li><a href="<?php echo URL; ?>producto/index">Artefactos</a></li>
+            <?php } ?>
+            <li><a href="<?php echo URL; ?>producto/guias">Adjuntar guia</a></li>
+            <li><a href="<?php echo URL; ?>home/logout"><p>Bienvenido <?php echo $_SESSION['User'] ?> </p><p>Cerrar sesión</p></a></li>
           <?php }else{ ?>
-          <li><a href="home/login">Iniciar sesión</a></li>
+            <li><a href="<?php echo URL; ?>home/login">Iniciar sesión</a></li>
           <?php } ?>
 
 
@@ -166,7 +166,7 @@
           <ul id="revolutionul">
             <!-- THE THIRD SLIDE -->
             <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="img/revolutionslider/thumbs/thumb2.jpg">
-              <img src="img/revolutionslider/bg3.jpg" alt="">
+              <img src="<?php echo URL; ?>img/revolutionslider/bg3.jpg" alt="">
               <div class="caption lfl slide_item_left"
               data-x="30"
               data-y="95"
@@ -202,7 +202,7 @@
     </li>
     <!-- THE THIRD SLIDE -->
     <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="img/revolutionslider/thumbs/thumb2.jpg">
-      <img src="img/revolutionslider/bg3.jpg" alt="">
+      <img src="<?php echo URL; ?>img/revolutionslider/bg3.jpg" alt="">
       <div class="caption lfl slide_item_left"
       data-x="30"
       data-y="95"
@@ -245,7 +245,7 @@ data-easing="easeOutExpo">
 </li>
 <!-- THE THIRD SLIDE -->
 <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="img/revolutionslider/thumbs/thumb2.jpg">
-  <img src="img/revolutionslider/bg3.jpg" alt="">
+  <img src="<?php echo URL; ?>img/revolutionslider/bg3.jpg" alt="">
   <div class="caption lfl slide_item_left"
   data-x="30"
   data-y="95"

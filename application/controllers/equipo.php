@@ -34,7 +34,7 @@
 				$this->modelEquipo->__SET('_contrasena', $psw);
 				$registrar = $this->modelEquipo->guardar();
 				if ($registrar == true) {
-					header("location:".URL."equipo/Index");
+					//header("location:".URL."equipo/Index");
 				}
 				else{
 					$mensaje="Error al Registrar el equipo";
@@ -52,8 +52,6 @@
 				$this->modelEquipo->__SET('_idEquipo', $idE);
 				$equipo = $this->modelEquipo->BusquedaParametro();
 				$this->render("edit",array('equipo' => $equipo,'mensaje' => $mensaje));
-
-				
 			}			
 		}
 

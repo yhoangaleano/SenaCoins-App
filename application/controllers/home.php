@@ -25,10 +25,10 @@ class Home extends Controller
 
     public function login(){
       
+
         $mensaje="";
         if ($_POST != null) {
-            var_dump($_POST);
-            exit;
+
             $user = $_POST['txtUsuario'];
             $psw = $_POST['txtContrasena'];
             $this->modelEquipo->__SET('_nombre_usuario', $user);
@@ -38,7 +38,8 @@ class Home extends Controller
                     $_SESSION['ID'] = $usuarios->idEquipo;
                     $_SESSION['Rol'] = $usuarios->administrador;
                     $_SESSION['User'] = $user;
-                    header("Location:".URL."equipo/Index");
+                    $_SESSION['Equipo'] = $usuarios->nombre_equipo;
+                    header("Location:".URL."home/Index");
                 }else{
                      $mensaje="alert('password incorrecto')";
                 }
@@ -68,6 +69,15 @@ class Home extends Controller
             header("location: ".URL."home/index");
         }
 
+    }
+
+    public function logout(){
+        unset($_SESSION['ID']);
+        unset($_SESSION['Rol']);
+        unset($_SESSION['User']);
+        unset($_SESSION['Equipo']);
+        session_destroy();
+        header("location: ".URL."home/index");
     }
 
 }
