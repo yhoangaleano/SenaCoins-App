@@ -39,10 +39,21 @@
 	    	$gsent->bindValue(":c", $this->__GET("_contrasena"), PDO::PARAM_STR);
 
 	    	$stm = $gsent->execute();
+	    	if($stm){
+	    		$rows = $this->max();
+	    	}else{
+	    		$rows = 0;
+	    	}
 
-	    	return $stm;
+	    	return $rows;
 	    }
 	
+		public function max(){
+			$stmt = $this->db->prepare("SELECT MAX(idEquipo) as c FROM equipo");
+			$stmt->execute();
+			$s = $stmt->fetch();
+			return $s->c;
+		}
 
 		public function Modificar(){
 	    	$gsent = $this->db->prepare("call SP_ModificarEquipo(:idE, :ne, :nu, :c)");

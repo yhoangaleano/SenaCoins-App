@@ -29,8 +29,20 @@
 				$this->modelEquipo->__SET('_nombre_usuario', $user);
 				$this->modelEquipo->__SET('_contrasena', $psw);
 				$registrar = $this->modelEquipo->guardar();
-				if ($registrar == true) {
-					$mensaje="Se registro correctamente";
+
+				if ($registrar > 0) {
+					try{ 
+
+						if(mkdir("upload/guias/".$registrar) == true && mkdir("upload/artefactos/".$registrar) == true){
+							$mensaje="Se registro correctamente ";
+						}else{
+							$mensaje="Se registro correctamente, pero la carpeta no fue posible crearla";
+						}
+
+					}catch(Exception $e){
+						$mensaje="Se registro correctamente, pero la carpeta no fue posible crearla";
+					}
+
 				}
 				else{
 					$mensaje="Error al Registrar";
