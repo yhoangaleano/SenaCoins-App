@@ -1,9 +1,5 @@
 <?php 
 
-	/**
-	* 
-	*/
-	
 	class Equipo extends Controller
 	{
 
@@ -26,9 +22,9 @@
 		public function Create(){
 			$mensaje="";
 			if ($_POST != null) {
-				$nomEquipo = $_POST['txtNomEquipo'];
-				$user = $_POST['txtUser'];
-				$psw = $_POST['txtPass'];
+				$nomEquipo = $_POST['txtNombreEquipo'];
+				$user = $_POST['txtNombreUsuario'];
+				$psw = $_POST['txtContrasena'];
 				$this->modelEquipo->__SET('_nombre_equipo', $nomEquipo);
 				$this->modelEquipo->__SET('_nombre_usuario', $user);
 				$this->modelEquipo->__SET('_contrasena', $psw);
@@ -44,25 +40,15 @@
 			$this->render("create",['mensaje'=>$mensaje]);
 		}
 
-		public function detail()
-		{
-			$mensaje="";
-			if ($_GET != null) {
-				$idE = $_GET['id'];
-				$this->modelEquipo->__SET('_idEquipo', $idE);
-				$equipo = $this->modelEquipo->BusquedaParametro();
-				$this->render("edit",array('equipo' => $equipo,'mensaje' => $mensaje));
-			}			
-		}
 
-		public function edit()
+		public function Modificar()
 		{
 			$mensaje="";
 			if ($_POST != null) {
-				$idEquipo = $_POST['txtCod'];
-				$nomEquipo = $_POST['txtNomEq'];
-				$user = $_POST['txtUser'];
-				$psw = $_POST['txtPass'];
+				$idEquipo = $_POST['txtCodigoEquipo'];
+				$nomEquipo = $_POST['txtNombreEquipo'];
+				$user = $_POST['txtNombreUsuario'];
+				$psw = $_POST['txtContrasena'];
 				$this->modelEquipo->__SET('_idEquipo', $idEquipo);
 				$this->modelEquipo->__SET('_nombre_equipo', $nomEquipo);
 				$this->modelEquipo->__SET('_nombre_usuario', $user);

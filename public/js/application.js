@@ -1,6 +1,17 @@
 $(function() {
 
-    equipo.Listar();
+    if (!String.format) {
+      String.format = function(format) {
+            var args = Array.prototype.slice.call(arguments, 1);
+            return format.replace(/{(\d+)}/g, function(match, number) { 
+              return typeof args[number] != 'undefined'
+              ? args[number] 
+              : match
+              ;
+            });
+        }
+    }
+
 
     // just a super-simple JS demo
 
@@ -42,6 +53,10 @@ $(function() {
         equipo.validar();
     });
 
+    $("#btnGuardar").click(function(){
+        equipo.Guardar();
+    });
+
 });
 
 var equipo = {
@@ -52,14 +67,43 @@ var equipo = {
             'dataType':'json',
             'url':url+'equipo/Guardar',
             'data':{
-                'nEquipo':$('#txtNombreEquipo').val(),
-                'nUsuario':$('#txtNombreUsuario').val(),
-                'contrasena':$('#txtContrasena').val()
+                'txtNombreEquipo':$('#txtNombreEquipo').val(),
+                'txtNombreUsuario':$('#txtNombreUsuario').val(),
+                'txtContrasena':$('#txtContrasena').val()
             }
         }).done(function(response){
-            alert(response.item);
+            alertify.alert(response.item);
         }).fail(function(response){
-            alert("Error");
+            alertify.alert("Error");
+        });
+    },
+    Edit:function(id, nombreE, nombreU, contrasena){
+
+        $('#txtCodigoEquipo').val(id);
+        $('#txtNombreEquipo').val(nombreE);
+        $('#txtNombreUsuario').val(nombreU);
+        $('#txtContrasena').val(contrasena);
+
+        $("#btnGuardar").css({"display":"none"});
+        $("#btnModificar").css({"display":"block"});
+        $("#btnModificar").attr({"onclick":"equipo.Modificar()"});
+          
+    },
+    Modificar:function(){
+        $.ajax({
+            'type':'post',
+            'dataType':'json',
+            'url':url+'equipo/Modificar',
+            'data':{
+                'txtCodigoEquipo':$('#txtCodigoEquipo').val(),
+                'txtNombreEquipo':$('#txtNombreEquipo').val(),
+                'txtNombreUsuario':$('#txtNombreUsuario').val(),
+                'txtContrasena':$('#txtContrasena').val()
+            }
+        }).done(function(response){
+            alertify.alert(response.item);
+        }).fail(function(response){
+            alertify.alert("Error");
         });
     },
     Listar:function(){
@@ -70,7 +114,8 @@ var equipo = {
         }).done(function(response){
             
             $.each(response, function(index, item){
-                $("#tblEquipo").append("<tr><td>"+item.nombre_equipo+"</td><td>"+item.nombre_usuario+"</td><td>"+item.contrasena+"</td><td>"+item.monedas+"</td></tr>");
+                var template =  "<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td><a onclick='equipo.Edit({4}, {5}, {6}, {7})'>Editar</a></td></tr>";
+                $("#tblEquipo").append(String.format(template, item.nombre_equipo, item.nombre_usuario, item.contrasena, item.monedas, item.idEquipo, '"'+item.nombre_equipo+'"', '"'+item.nombre_usuario+'"', '"'+item.contrasena+'"'));
             });
 
             $('#tblEquipo').dataTable({
@@ -80,7 +125,7 @@ var equipo = {
             });
 
         }).fail(function(response){
-            alert("Error");
+            alertify.alert("Error");
         });
     },
     validar:function(){
@@ -93,8 +138,6 @@ var equipo = {
             }
         }).done(function(response){
             
-            console.log(response.item);
-
             $("#imgLogin").removeAttr("src");
 
             if(response.item != null){
@@ -104,7 +147,7 @@ var equipo = {
             }
 
         }).fail(function(response){
-            alert("Error");
+            alertify.alert("Error");
         });
     }
 }

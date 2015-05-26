@@ -394,6 +394,15 @@ if (isset($js)) {
 
 ?>
 
+<script type="text/javascript">
+  <?php 
+  if(isset($equipo)){
+    echo $equipo;
+  }
+   ?>
+  
+</script>
+
 <!-- END PAGE LEVEL JAVASCRIPTS -->
 </body>
 <!-- END BODY -->

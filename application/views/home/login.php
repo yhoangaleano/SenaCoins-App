@@ -207,14 +207,21 @@
             
     </div>
 </div>
-	<script>
-	  var url = "<?php echo URL; ?>";
-	  <?php echo $mensaje; ?>
-	</script>
+
 
 
 	<script src="<?php echo URL; ?>js/jquery.min.js" type="text/javascript"></script>
 
+	<script src="<?php echo URL; ?>plugins/DataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+	<script src="<?php echo URL; ?>plugins/DataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- JavaScript -->
+	<script src="<?php echo URL; ?>plugins/Alertify/js/alertify.min.js"></script>
+
+	<script>
+	  var url = "<?php echo URL; ?>";
+	  <?php echo $mensaje; ?>
+	</script>
 
 	<script src="<?php echo URL; ?>js/application.js" type="text/javascript"></script>
 
@@ -243,16 +250,3 @@
 	</script>
 </body>
 </html>
-
-
-
-
-
-<!-- <div class="container">
-	<form action="<?php echo URL ?>home/Index" method="post">
-	    <input type="text" name="txtUser" placeholder="Nombre de Usuario"><br>
-	    <input type="password" name="txtPass" placeholder="contraseña"><br>
-	    <input type="submit" name="btnIngresar" value="Ingresar">
-	</form>
-	<?php echo $mensaje; ?>
-</div> -->

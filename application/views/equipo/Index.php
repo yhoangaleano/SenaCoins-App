@@ -9,6 +9,7 @@
 				<form method="post">
 					<div class="form-group">
 						<label for="">Nombre de equipo</label>
+						<input type="hidden" id="txtCodigoEquipo" />
 						<input type="text" class="form-control" id="txtNombreEquipo" placeholder="Ejm: Multimedia"  />
 					</div>
 					<div class="form-group">
@@ -23,7 +24,7 @@
 						<button type="button" class="btn btn-primary pull-right" id="btnGuardar">Guardar</button>
 					</div>
 					<div class="form-group">
-						<button type="button" class="btn btn-block btn-primary" id="btnModificar" style="display:none">Modificar</button>
+						<button type="button" class="btn btn-warning pull-right" id="btnModificar" style="display:none">Modificar</button>
 					</div>
 				</form>
 			</div>
@@ -40,6 +41,7 @@
 						<th class="active">Nombre de usuario</th>
 						<th class="active">Contraseña</th>
 						<th class="active">Cantidad de monedas</th>
+						<th class="active">Editar</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -50,5 +52,6 @@
 		</div>
 	</div>
 </div>	
+<?php $equipo = "equipo.Listar();" ?>
 
 
