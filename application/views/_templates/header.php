@@ -137,7 +137,7 @@
               <li><a href="<?php echo URL; ?>producto/index">Artefactos</a></li>
             <?php } ?>
             <li><a href="<?php echo URL; ?>producto/guias">Adjuntar guia</a></li>
-            <li><a href="<?php echo URL; ?>home/logout"><p>Bienvenido <?php echo $_SESSION['User'] ?> </p><p>Cerrar sesión</p></a></li>
+            <li><a href="<?php echo URL; ?>home/logout"><p>Bienvenido <?php echo $_SESSION['Equipo'] ?> </p><p>Cerrar sesión</p></a></li>
           <?php }else{ ?>
             <li><a href="<?php echo URL; ?>home/login">Iniciar sesión</a></li>
           <?php } ?>
