@@ -30,14 +30,14 @@
 				$this->modelEquipo->__SET('_contrasena', $psw);
 				$registrar = $this->modelEquipo->guardar();
 				if ($registrar == true) {
-					//header("location:".URL."equipo/Index");
+					$mensaje="Se registro correctamente";
 				}
 				else{
-					$mensaje="Error al Registrar el equipo";
+					$mensaje="Error al Registrar";
 				}
 
 			}
-			$this->render("create",['mensaje'=>$mensaje]);
+			echo json_encode(['item'=>$mensaje]);
 		}
 
 
@@ -55,14 +55,14 @@
 				$this->modelEquipo->__SET('_contrasena', $psw);
 				$modificar = $this->modelEquipo->Modificar();
 				if ($modificar == true) {
-					header("location:".URL."equipo/Index");
+					$mensaje="Se modifico correctamente";
 				}
 				else{
-					$mensaje="Error al Modificar el equipo";
+					$mensaje="Error al modificar";
 				}
 
 			}
-			$this->render("edit",['mensaje'=>$mensaje]);
+			echo json_encode(['item'=>$mensaje]);
 		}
 	}
 

@@ -44,7 +44,7 @@
 						<th class="active">Editar</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="tbdyEquipo">
 
 				</tbody>
 			</table>

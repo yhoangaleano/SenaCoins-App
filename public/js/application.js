@@ -65,16 +65,18 @@ var equipo = {
         $.ajax({
             'type':'post',
             'dataType':'json',
-            'url':url+'equipo/Guardar',
+            'url':url+'equipo/Create',
             'data':{
                 'txtNombreEquipo':$('#txtNombreEquipo').val(),
                 'txtNombreUsuario':$('#txtNombreUsuario').val(),
                 'txtContrasena':$('#txtContrasena').val()
             }
         }).done(function(response){
-            alertify.alert(response.item);
+            alertify.success(response.item);
+            equipo.Listar();
+            equipo.limpiar();
         }).fail(function(response){
-            alertify.alert("Error");
+            alertify.error("Error");
         });
     },
     Edit:function(id, nombreE, nombreU, contrasena){
@@ -89,6 +91,16 @@ var equipo = {
         $("#btnModificar").attr({"onclick":"equipo.Modificar()"});
           
     },
+    limpiar:function(){
+
+        $('#txtCodigoEquipo').val("");
+        $('#txtNombreEquipo').val("");
+        $('#txtNombreUsuario').val("");
+        $('#txtContrasena').val("");
+
+        $("#btnGuardar").css({"display":"block"});
+        $("#btnModificar").css({"display":"none"});
+    },
     Modificar:function(){
         $.ajax({
             'type':'post',
@@ -101,9 +113,11 @@ var equipo = {
                 'txtContrasena':$('#txtContrasena').val()
             }
         }).done(function(response){
-            alertify.alert(response.item);
+            alertify.success(response.item);
+            equipo.Listar();
+            equipo.limpiar();
         }).fail(function(response){
-            alertify.alert("Error");
+            alertify.error("Error");
         });
     },
     Listar:function(){
@@ -113,9 +127,11 @@ var equipo = {
             'url':url+'equipo/Listar'
         }).done(function(response){
             
+            $("#tbdyEquipo").empty();
+
             $.each(response, function(index, item){
                 var template =  "<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td><a onclick='equipo.Edit({4}, {5}, {6}, {7})'>Editar</a></td></tr>";
-                $("#tblEquipo").append(String.format(template, item.nombre_equipo, item.nombre_usuario, item.contrasena, item.monedas, item.idEquipo, '"'+item.nombre_equipo+'"', '"'+item.nombre_usuario+'"', '"'+item.contrasena+'"'));
+                $("#tbdyEquipo").append(String.format(template, item.nombre_equipo, item.nombre_usuario, item.contrasena, item.monedas, item.idEquipo, '"'+item.nombre_equipo+'"', '"'+item.nombre_usuario+'"', '"'+item.contrasena+'"'));
             });
 
             $('#tblEquipo').dataTable({
@@ -125,7 +141,7 @@ var equipo = {
             });
 
         }).fail(function(response){
-            alertify.alert("Error");
+            alertify.error("Error");
         });
     },
     validar:function(){
@@ -147,7 +163,7 @@ var equipo = {
             }
 
         }).fail(function(response){
-            alertify.alert("Error");
+            alertify.error("Error");
         });
     }
 }
