@@ -18,6 +18,10 @@
 			$this->render("Index", array('listaProductos' => $lista, 'lista_json' => $lista_json));
 		}
 
+		public function galeria(){
+			$this->render("galeria");
+		}
+
 		public function Listar(){
 			$lista = $this->modelProducto->listar();
 			echo json_encode($lista);
