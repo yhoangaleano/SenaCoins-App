@@ -31,12 +31,11 @@
 	    }
 
 	    public function Guardar(){
-	    	$gsent = $this->db->prepare("call SP_GuardarProducto(:np, :d, :ug, ie)");
+	    	$gsent = $this->db->prepare("call SP_GuardarProducto(:ip, :d, ie)");
 
 	    	$gsent->bindValue(":np", $this->__GET("_nombre_equipo"), PDO::PARAM_STR);
 	    	$gsent->bindValue(":d", $this->__GET("_nombre_usuario"), PDO::PARAM_STR);
-	    	$gsent->bindValue(":ug", $this->__GET("_contrasena"), PDO::PARAM_STR);
-	    	$gsent->bindValue(":ie", $this->__GET("_contrasena"), PDO::PARAM_STR);
+	    	$gsent->bindValue(":ie", $this->__GET("_contrasena"), PDO::PARAM_INT);
 
 	    	$stm = $gsent->execute();
 
