@@ -74,11 +74,37 @@
     font-weight: 700;
   }
 
+  .panel-orange  {
+    border-color: #e64f00
+  }
+
   .panel-orange > .panel-heading {
     color: #fff;
     background: #cc3304;
     border-color: #e64f00
   }
+
+  .table > thead > tr > td.active, .table > thead > tr > th.active, .table > thead > tr.active > td, .table > thead > tr.active > th, .table > tbody > tr > td.active, .table > tbody > tr > th.active, .table > tbody > tr.active > td, .table > tbody > tr.active > th, .table > tfoot > tr > td.active, .table > tfoot > tr > th.active, .table > tfoot > tr.active > td, .table > tfoot > tr.active > th {
+    background: #cc3304;
+    color: #fff;
+    text-align: center;
+  }
+
+  .table {
+    text-align: center;
+  }
+
+  .footer {
+    background: #272626;
+    color: #fff;
+    font-size: 12px;
+    padding: 15px 0;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+  }
+
+
 
 </style>
 
