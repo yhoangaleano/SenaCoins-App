@@ -20,32 +20,6 @@ SET time_zone = "+00:00";
 -- Base de datos: `senacoins`
 --
 
-DELIMITER $$
---
--- Procedimientos
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_BusquedaParametro`(IN `d_idEquipo` VARCHAR(45))
-    NO SQL
-select * from equipo where idEquipo = d_idEquipo$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_GuardarEquipo`(IN `d_NombreEquipo` VARCHAR(30), IN `d_NombreUsuario` VARCHAR(45), IN `d_Contrasena` VARCHAR(45))
-    NO SQL
-INSERT INTO equipo values (null, d_NombreEquipo, d_NombreUsuario, d_Contrasena, 1000, false)$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ListarEquipo`()
-    NO SQL
-SELECT * FROM equipo$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Login`(IN `d_nombre_usuario` VARCHAR(45))
-    NO SQL
-select idEquipo, contrasena, administrador from equipo where nombre_usuario = d_nombre_usuario$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ModificarEquipo`(IN `d_idEquipo` INT, IN `d_nombreEquipo` VARCHAR(30), IN `d_nombreUsuario` VARCHAR(45), IN `d_contrasena` VARCHAR(45))
-    NO SQL
-UPDATE equipo SET nombre_equipo = d_nombreEquipo, nombre_usuario = d_nombreUsuario, contrasena = d_contrasena WHERE idEquipo = d_idEquipo$$
-
-DELIMITER ;
-
 -- --------------------------------------------------------
 
 --
@@ -99,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `imagen` (
   `idImagen` int(11) NOT NULL AUTO_INCREMENT,
   `url_imagen` varchar(50) DEFAULT NULL,
   `producto_idProducto` int(11) NOT NULL,
+  `estado` bit(1) DEFAULT 0,
   PRIMARY KEY (`idImagen`),
   KEY `fk_imagen_producto1_idx` (`producto_idProducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

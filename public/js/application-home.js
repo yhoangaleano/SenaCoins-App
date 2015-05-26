@@ -31,7 +31,7 @@ var home = {
             var artefactos = '';
 
             $.each(response, function(position, item){
-                artefactos += String.format(template, (url + item.imagen), item.nombre_producto, (url + 'producto/detalle/' + item.idProducto), item.nombre_equipo,  item.inversion == null ? 0 : item.inversion);
+                artefactos += String.format(template, (url + "upload/artefactos/" + item.equipo_idEquipo + "/" + item.imagen), item.nombre_producto, (url + 'producto/detalle/' + item.idProducto), item.nombre_equipo,  item.inversion == null ? 0 : item.inversion);
             });
             content = String.format(content,artefactos);
             $("#content-artefactos").append(content);
