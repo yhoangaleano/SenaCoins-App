@@ -378,7 +378,7 @@ data-easing="easeOutExpo">
     Layout.init();
     Layout.initOWL();
     RevosliderInit.initRevoSlider();
-    Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+    //Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
     Layout.initNavScrolling();
     // alertify.set('notifier','position', 'top-right');
     // alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
