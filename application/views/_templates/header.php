@@ -101,13 +101,6 @@
     text-align: center;
   }
 
-  .footer {
-    background: #272626;
-    color: #fff;
-    font-size: 12px;
-    padding: 15px 0;
-  }
-
   .main{
     margin-bottom: 80px;
   }
@@ -372,8 +365,8 @@ data-easing="easeOutExpo">
     RevosliderInit.initRevoSlider();
     Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
     Layout.initNavScrolling();
-    alertify.set('notifier','position', 'top-right');
-    alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
+    // alertify.set('notifier','position', 'top-right');
+    // alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
   });
 </script>
 <!-- END PAGE LEVEL JAVASCRIPTS -->
