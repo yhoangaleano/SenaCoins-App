@@ -47,6 +47,8 @@
   <!-- Bootstrap theme -->
   <link rel="stylesheet" href="<?php echo URL; ?>plugins/Alertify/css/themes/bootstrap.min.css"/>
 
+  <link rel="stylesheet" href="<?php echo URL; ?>plugins/DropZone/dropzone.css"/>
+
   <link href="<?php echo URL; ?>plugins/rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
   <link href="<?php echo URL; ?>plugins/rangeSlider/css/ion.rangeSlider.skinNice.css" rel="stylesheet">
 
@@ -367,6 +369,9 @@ data-easing="easeOutExpo">
 
 <script src="<?php echo URL; ?>plugins/DataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="<?php echo URL; ?>plugins/DataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+
+
+<script src="<?php echo URL; ?>plugins/DropZone/dropzone.js"></script>
 
 <!-- JavaScript -->
 <script src="<?php echo URL; ?>plugins/Alertify/js/alertify.min.js"></script>

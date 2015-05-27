@@ -7,9 +7,13 @@
 	{
 
 		public $modelProducto = null;
+		public $modelImagen = null;
+		public $modelEquipo = null;
 
 		function __construct(){
 			$this->modelProducto = $this->loadModel("mdlProducto");
+			$this->modelImagen = $this->loadModel("mdlImagen");
+			$this->modelEquipo = $this->loadModel("mdlEquipo");
 		}		
 		
 		public function Index(){
@@ -37,6 +41,11 @@
 			echo json_encode($lista);
 		}
 
+		public function listarEquipoProyecto(){
+			$lista = $this->modelProducto->Listar_Equipos_Producto();
+			echo json_encode($lista);
+		}
+
 		public function transaccion(){
 			$mensaje = 0;
 			if ($_POST != null) {
@@ -56,25 +65,153 @@
 			echo json_encode(['mensaje'=>$mensaje]);
 		}
 
-		public function Create(){
+		public function create(){
 			$mensaje="";
 			if ($_POST != null) {
-				$nomEquipo = $_POST['txtNomEquipo'];
-				$user = $_POST['txtUser'];
-				$psw = $_POST['txtPass'];
-				$this->modelProducto->__SET('_nombre_equipo', $nomEquipo);
-				$this->modelProducto->__SET('_nombre_usuario', $user);
-				$this->modelProducto->__SET('_contrasena', $psw);
-				$registrar = $this->modelProducto->guardar();
-				if ($registrar == true) {
-					//header("location:".URL."equipo/Index");
+				if($this->modelEquipo->artefactoAso($_POST["txtIdEquipo"]) == false){
+
+					$this->modelProducto->__SET('_nombre_producto', $_POST["txtNombreProducto"]);
+					$this->modelProducto->__SET('_descripcion', $_POST["txtDescripcion"]);
+					$this->modelProducto->__SET('_idEquipo', $_POST["txtIdEquipo"]);
+
+					$registrar = $this->modelProducto->guardar();
+					//var_dump($registrar);
+					if ($registrar == true) {
+						try{
+							$this->subirUna(1);
+							$mensaje = '1';
+						}catch(Exception $e){
+							$mensaje = '3';
+						}
+
+					}
+					else{
+						$mensaje="2";
+					}
+				}else{
+					$mensaje = '4';
 				}
-				else{
-					$mensaje="Error al Registrar el equipo";
+			}
+			$this->render("create",['mensaje'=>$mensaje]);
+		}
+
+
+		//Imagenes
+		public function asociar(){
+
+			$this->render("asociarGaleria");
+		}
+
+		public function subir($estado = 0){
+
+			if($_POST["txtIdEquipo"] != null){
+
+				$target_dir = "upload/artefactos/".$_POST["txtIdEquipo"]."/";
+
+				for ($i = 0; $i < count($_FILES["file"]["name"]); $i++) {
+
+					$target_file = $target_dir . $_FILES["file"]["name"][$i];
+					//var_dump($target_file);
+					$uploadOk = 1;
+					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+					// Check if file already exists
+					if (file_exists($target_file)) {
+					    	echo json_encode([
+							    'status' => 'exist'
+							]);
+					    $uploadOk = 0;
+					}
+
+					// Check if $uploadOk is set to 0 by an error
+					if ($uploadOk == 0) {
+					    echo json_encode([
+							    'status' => 'fail'
+						]);
+					// if everything is ok, try to upload file
+					} else {
+					    if (move_uploaded_file($_FILES["file"]["tmp_name"][$i], $target_file)) {
+
+					    	$this->modelImagen->__SET("_url_imagen",$_FILES["file"]["name"][$i]);
+					    	$art = $this->modelEquipo->artefactoAso($_POST["txtIdEquipo"]);
+					    	$this->modelImagen->__SET("_producto_idProducto",$art->idProducto);
+					    	$this->modelImagen->__SET("_estado",$estado);
+
+					    	if($this->modelImagen->Guardar()){
+					    		echo json_encode([
+							    	'status' => 'ok'
+								]);
+					    	}else{
+					    		echo json_encode([
+							    	'status' => 'fail'
+								]);
+					    	}
+
+					    } else {
+					        echo json_encode([
+							    	'status' => 'fail'
+							]);
+					    }
+					}
 				}
 
 			}
-			$this->render("create",['mensaje'=>$mensaje]);
+		}
+
+
+		public function subirUna($estado){
+
+			if($_POST["txtIdEquipo"] != null){
+
+				$target_dir = "upload/artefactos/".$_POST["txtIdEquipo"]."/";
+
+
+					$target_file = $target_dir . $_FILES["file"]["name"];
+					//var_dump($target_file);
+					$uploadOk = 1;
+					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+					// Check if file already exists
+					if (file_exists($target_file)) {
+					    	echo json_encode([
+							    'status' => 'exist'
+							]);
+					    $uploadOk = 0;
+					}
+
+					// Check if $uploadOk is set to 0 by an error
+					if ($uploadOk == 0) {
+					    echo json_encode([
+							    'status' => 'fail'
+						]);
+					// if everything is ok, try to upload file
+					} else {
+					    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+
+					    	$this->modelImagen->__SET("_url_imagen",$_FILES["file"]["name"]);
+					    	$art = $this->modelEquipo->artefactoAso($_POST["txtIdEquipo"]);
+					    	$this->modelImagen->__SET("_producto_idProducto",$art->idProducto);
+					    	$this->modelImagen->__SET("_estado",$estado);
+
+					    	if($this->modelImagen->Guardar()){
+					    		echo json_encode([
+							    	'status' => 'ok'
+								]);
+					    	}else{
+					    		echo json_encode([
+							    	'status' => 'fail'
+								]);
+					    	}
+
+					    } else {
+					        echo json_encode([
+							    	'status' => 'fail'
+							]);
+					    }
+					}
+				
+
+			}
 		}
 	}
 

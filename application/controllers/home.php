@@ -60,7 +60,7 @@ class Home extends Controller
             $usuario = $this->modelEquipo->VlUsuario();
 
             if($usuario != false){
-                echo json_encode(array("item"=>$usuario->id+"/"+$usuario->imagen));
+                echo json_encode(array("item"=>$usuario->id."/".$usuario->imagen));
             }else{
                 echo json_encode(array("item"=>null));
             }

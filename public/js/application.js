@@ -59,6 +59,7 @@ $(function() {
 
 });
 
+
 var equipo = {
 
     Guardar:function(){
@@ -154,6 +155,8 @@ var equipo = {
             }
         }).done(function(response){
             
+            console.log(response);
+
             $("#imgLogin").removeAttr("src");
 
             if(response.item != null){

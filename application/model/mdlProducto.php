@@ -36,7 +36,7 @@
 
 			$gsent->bindValue(":np", $this->__GET("_nombre_producto"), PDO::PARAM_STR);
 			$gsent->bindValue(":d", $this->__GET("_descripcion"), PDO::PARAM_STR);
-			$gsent->bindValue(":ie", $this->__GET("_id_equipo"), PDO::PARAM_INT);
+			$gsent->bindValue(":ie", $this->__GET("_idEquipo"), PDO::PARAM_INT);
 
 			$stm = $gsent->execute();
 
@@ -114,6 +114,15 @@
 			$gsent->execute();
 			return $gsent->fetch();
 		}
+
+		public function Listar_Equipos_Producto(){
+			$sql = "SELECT e.idEquipo as idEquipo, e.nombre_equipo as nombre_equipo FROM equipo e INNER JOIN producto p on (e.idEquipo = p.equipo_idEquipo)";
+			$query = $this->db->prepare($sql);
+			$query->execute();
+			return $query->fetchAll();
+		}
+
+
 	}
 
 	?>
