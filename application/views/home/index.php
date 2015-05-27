@@ -49,19 +49,19 @@
 </div>
 <!-- END STEPS -->
 <!-- BEGIN TABS AND TESTIMONIALS -->
-<div class="row mix-block margin-bottom-40">
-    <!-- TESTIMONIALS -->
+<!-- <div class="row mix-block margin-bottom-40">
+    TESTIMONIALS
     <div class="col-md-6 testimonials-v1">
 
-        <!-- BEGIN BLOCKQUOTE BLOCK -->
+        BEGIN BLOCKQUOTE BLOCK
         <div class="row quote-v1 margin-bottom-30">
             <div class="col-md-12">
                 <span>Comentarios de la III Jornada Pedagógica</span>
             </div>
         </div>
-        <!-- END BLOCKQUOTE BLOCK -->
+        END BLOCKQUOTE BLOCK
         <div id="myCarousel" class="carousel slide">
-            <!-- Carousel items -->
+            Carousel items 
             <div class="carousel-inner">
                 <div class="active item">
                     <blockquote><p>Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p></blockquote>
@@ -94,24 +94,24 @@
                     </div>
                 </div>
             </div>
-            <!-- Carousel nav -->
+             Carousel nav 
             <a class="left-btn" href="#myCarousel" data-slide="prev"></a>
             <a class="right-btn" href="#myCarousel" data-slide="next"></a>
         </div>
     </div>
-    <!-- END TESTIMONIALS -->
-    <!-- TESTIMONIALS -->
+     END TESTIMONIALS 
+    TESTIMONIALS
     <div class="col-md-6 testimonials-v1">
 
-        <!-- BEGIN BLOCKQUOTE BLOCK -->
+        BEGIN BLOCKQUOTE BLOCK 
         <div class="row quote-v1 margin-bottom-30">
             <div class="col-md-12">
                 <span>Agradecimientos de la III Jornada Pedagógica</span>
             </div>
         </div>
-        <!-- END BLOCKQUOTE BLOCK -->
+        END BLOCKQUOTE BLOCK
         <div id="myCarousel2" class="carousel slide">
-            <!-- Carousel items -->
+            Carousel items 
             <div class="carousel-inner">
                 <div class="active item">
                     <blockquote><p>Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p></blockquote>
@@ -143,14 +143,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Carousel nav -->
+            </div> 
+             Carousel nav 
             <a class="left-btn" href="#myCarousel2" data-slide="prev"></a>
             <a class="right-btn" href="#myCarousel2" data-slide="next"></a>
         </div>
     </div>
-    <!-- END TESTIMONIALS -->
-</div>
+    END TESTIMONIALS
+</div> -->
 <!-- END TABS AND TESTIMONIALS -->
 
 <?php   
