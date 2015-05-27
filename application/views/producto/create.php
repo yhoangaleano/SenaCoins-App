@@ -39,18 +39,16 @@
 <?php   
 
 if($mensaje == '1'){ 
-	echo 'alert("Se guardo correctamente")'; 
+	$mensaje = 'alert("Se guardo correctamente")'; 
 }else if($mensaje == '2'){ 
-	echo 'alert("No se guardo")'; 
+	$mensaje = 'alert("No se guardo")'; 
 }else if($mensaje == '3'){ 
-	echo 'alert("Se guardo el artefacto, pero no fue posible subir la imagen")'; 
+	$mensaje = 'alert("Se guardo el artefacto, pero no fue posible subir la imagen")'; 
 }else if($mensaje == '4'){ 
-	echo 'alert("El equipo ya tiene un artefacto asociado")'; 
+	$mensaje = 'alert("El equipo ya tiene un artefacto asociado")'; 
 }
 
 $js = '<script src="'.URL.'js/application-selects.js" type="text/javascript"></script>';
 $js .= '<script>select_equipo.Listar();</script>';
-$js .= '<script>
-	'.$mensaje.'
-</script>';
+$js .= '<script>'.$mensaje.'</script>';
 ?>

@@ -97,5 +97,37 @@ var producto = {
 
           }
         };
+    },
+    subirGuia:function(){
+        Dropzone.options.myDropzone = {
+
+          url: url+'producto/subirGuia',
+          // Prevents Dropzone from uploading dropped files immediately
+          autoProcessQueue: false,
+          uploadMultiple: false,
+          parallelUploads: 1,
+          maxFiles: 1,
+          addRemoveLinks: true,
+
+          init: function() {
+            var submitButton = document.querySelector("#submit-all")
+                myDropzone = this; // closure
+
+            submitButton.addEventListener("click", function() {
+              myDropzone.processQueue(); // Tell Dropzone to process all queued files.
+            });
+            this.on("complete", function(data, response) {
+              // If all files have been uploaded
+              alertify.success("Se subio "+data.name);
+              $("#txtIdEquipo").val("");
+              if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0) {
+                var _this = this;
+                // Remove all files
+                _this.removeAllFiles();
+              }
+            });
+
+          }
+        };
     }
 }
