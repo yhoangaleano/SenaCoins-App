@@ -34,6 +34,7 @@
   <!-- Theme styles START -->
   <link href="<?php echo URL; ?>css/components.css" rel="stylesheet">
   <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
+  <link href="<?php echo URL; ?>css/style-shop.css" rel="stylesheet" type="text/css">
   <link href="<?php echo URL; ?>css/style-revolution-slider.css" rel="stylesheet"><!-- metronic revo slider styles -->
   <link href="<?php echo URL; ?>css/style-responsive.css" rel="stylesheet">
   <link href="<?php echo URL; ?>css/themes/red.css" rel="stylesheet" id="style-color">
@@ -114,6 +115,11 @@
     color: #fff;
   }
 
+  .item-transaccion{
+    width: 40px;
+    height: 40px;
+  }
+
 </style>
 
 </head>
@@ -129,6 +135,28 @@
 
 
       <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+      
+      <!-- BEGIN CART -->
+      <div class="top-cart-block">
+        <div class="top-cart-info margin-top-2">
+          <a href="javascript:void(0);" class="top-cart-info-count">Coins</a>
+          <a href="javascript:void(0);" class="top-cart-info-value">$1260</a>
+        </div>
+        <i class="fa fa-shopping-cart margin-top-2"></i>
+
+        <div class="top-cart-content-wrapper">
+          <div class="top-cart-content">
+            <ul class="scroller" style="height: 250px;">
+            <li class="text-center">
+                <a href="shop-item.html"><img class="item-transaccion" src="img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
+                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
+                <em>$1230</em>
+              </li>
+            </ul>
+          </div>
+        </div>            
+      </div>
+      <!--END CART -->
 
       <!-- BEGIN NAVIGATION -->
       <div class="header-navigation pull-right font-transform-inherit margin-top">
@@ -355,8 +383,10 @@ data-easing="easeOutExpo">
 </script>
 
 <script src="<?php echo URL; ?>js/bootstrap.min.js" type="text/javascript"></script>
-
 <script src="<?php echo URL; ?>js/back-to-top.js" type="text/javascript"></script>
+<script src="<?php echo URL; ?>plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
 <script src="<?php echo URL; ?>plugins/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
