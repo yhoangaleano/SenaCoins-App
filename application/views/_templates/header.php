@@ -136,27 +136,32 @@
 
       <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
       
-      <!-- BEGIN CART -->
-      <div class="top-cart-block">
-        <div class="top-cart-info margin-top-2">
-          <a href="javascript:void(0);" class="top-cart-info-count">Coins</a>
-          <a href="javascript:void(0);" class="top-cart-info-value">$1260</a>
-        </div>
-        <i class="fa fa-shopping-cart margin-top-2"></i>
+      <?php if(isset($_SESSION['Rol'])){ ?>
+        <?php if($_SESSION['Rol'] == 0){ ?>
 
-        <div class="top-cart-content-wrapper">
-          <div class="top-cart-content">
-            <ul class="scroller" style="height: 250px;">
-            <li class="text-center">
-                <a href="shop-item.html"><img class="item-transaccion" src="img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
-                <em>$1230</em>
-              </li>
-            </ul>
+        <!-- BEGIN CART -->
+        <div class="top-cart-block">
+          <div class="top-cart-info margin-top-2">
+            <a href="javascript:void(0);" class="top-cart-info-count">Coins</a>
+            <a href="javascript:void(0);" class="top-cart-info-value" id="monedas"></a>
           </div>
-        </div>            
-      </div>
-      <!--END CART -->
+          <i class="fa fa-shopping-cart margin-top-2"></i>
+
+          <div class="top-cart-content-wrapper">
+            <div class="top-cart-content">
+              <ul class="scroller" style="height: 250px;" id="ulMovimiento">
+  
+                <li class="text-center">
+                  <strong><a href="#">No se han realizado inversiones</a></strong>
+                </li>
+
+              </ul>
+            </div>
+          </div>            
+        </div>
+        <!--END CART -->
+        <?php } ?>
+      <?php } ?>
 
       <!-- BEGIN NAVIGATION -->
       <div class="header-navigation pull-right font-transform-inherit margin-top">
@@ -441,6 +446,16 @@ if (isset($js)) {
     echo $equipo;
   }
   ?>
+
+  <?php 
+
+    if(isset($_SESSION['Rol'])){
+      if($_SESSION['Rol'] == 0){
+          echo "movimiento.listarMovimiento()";
+      }
+    }
+
+   ?>
   
 </script>
 

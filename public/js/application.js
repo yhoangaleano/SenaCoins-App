@@ -170,3 +170,38 @@ var equipo = {
         });
     }
 }
+
+
+var movimiento = {
+
+    listarMovimiento:function(){
+        $.ajax({
+            'type':'post',
+            'dataType':'json',
+            'url':url+'producto/movimientoCoins'
+        }).done(function(response){
+            
+            $("#monedas").empty();
+
+            var template =  "<li class='text-center'><a href='#'><img class='item-transaccion' src='{0}' width='37' height='34'></a><strong><a href='#'>{1}</a></strong><em>${2}</em></li>";
+
+            if(response.moneda != false){
+
+                $("#monedas").html("$"+response.moneda.monedas);
+
+                if(response.movimiento != false){
+
+                    $("#ulMovimiento").empty();
+                    $.each(response.movimiento, function(index, item){
+                        $("#ulMovimiento").append(String.format(template, url+"upload/artefactos/"+response.idEquipo+"/"+item.url_imagen, item.nombre_producto, item.cantidad));
+                    });
+
+                }
+            }
+
+        }).fail(function(response){
+            alertify.error("Error");
+        });
+    },
+
+}

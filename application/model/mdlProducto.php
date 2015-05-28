@@ -122,6 +122,21 @@
 		}
 
 
+
+		public function monedasRestantes(){
+			$gsent = $this->db->prepare("SELECT monedas FROM equipo WHERE idEquipo = ?");
+			$gsent->bindValue(1 ,$this->__GET("_idEquipo"));
+			$gsent->execute();
+			return $gsent->fetch();
+		}
+
+		public function productoInvertidos(){
+			$query = $this->db->prepare("SELECT p.nombre_producto as nombre_producto, i.url_imagen as url_imagen, m.cantidad as cantidad FROM transaccion m INNER JOIN producto p ON (p.idProducto = m.producto_idProducto) INNER JOIN imagen i ON (p.idProducto = i.producto_idProducto and i.estado = 1) WHERE m.equipo_idEquipo = ?");
+			$query->bindValue(1 ,$this->__GET("_idEquipo"));
+			$query->execute();
+			return $query->fetchAll();
+		}
+
 	}
 
 	?>

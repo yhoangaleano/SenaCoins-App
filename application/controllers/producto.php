@@ -315,6 +315,25 @@
 			echo json_encode(array("respuesta"=>$lista));
 		}
 
+
+
+
+
+
+		public function movimientoCoins(){
+
+			$this->modelProducto->__SET("_idEquipo",$_SESSION["ID"]);
+
+			$moneda = $this->modelProducto->monedasRestantes();
+
+			$movimiento = $this->modelProducto->productoInvertidos();
+
+			echo json_encode(array("moneda" => $moneda, "movimiento" => $movimiento, "idEquipo" => $_SESSION["ID"]));
+		}
+
+
+
+
 	}
 
 
