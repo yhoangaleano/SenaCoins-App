@@ -72,12 +72,11 @@
 
 
 		public function Modificar(){
-			$gsent = $this->db->prepare("call SP_MdificarEquipo(:idE, :ne, :nu, :c)");
+			$gsent = $this->db->prepare("call SP_MdificarProducto(:np, :d, :idP)");
 
-			$gsent->bindValue(":idE", $this->__GET("_idEquipo"), PDO::PARAM_INT);
-			$gsent->bindValue(":ne", $this->__GET("_nombre_equipo"), PDO::PARAM_STR);
-			$gsent->bindValue(":nu", $this->__GET("_nombre_usuario"), PDO::PARAM_STR);
-			$gsent->bindValue(":c", $this->__GET("_contrasena"), PDO::PARAM_STR);
+			$gsent->bindValue(":np", $this->__GET("_nombre_producto"), PDO::PARAM_STR);
+			$gsent->bindValue(":d", $this->__GET("_descripcion"), PDO::PARAM_STR);
+			$gsent->bindValue(":idP", $this->__GET("_idProducto"), PDO::PARAM_INT);
 
 			$stm = $gsent->execute();
 

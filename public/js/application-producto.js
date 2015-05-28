@@ -14,9 +14,7 @@ $(function() {
 
 });
 
-
 var producto = {
-    
     listaArtefactos :function(){
         console.log("refresh");
 
