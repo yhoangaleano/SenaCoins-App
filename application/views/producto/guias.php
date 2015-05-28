@@ -14,16 +14,7 @@
             <div class="row">
 
                 <!-- item -->
-                <div class="col-md-4 text-center">
-                    <div class="panel panel-info panel-pricing">
-                        <div class="panel-heading">
-                            <i class="fa fa-eye"></i>
-                            <h3>Opción 1</h3>
-                        </div>
-                        <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-info" href="#" id="verGuia">Ver guia</a>
-                        </div>
-                    </div>
+                <div class="col-md-2 text-center">
                 </div>
                 <!-- /item -->
 
@@ -32,10 +23,10 @@
                     <div class="panel panel-info panel-pricing">
                         <div class="panel-heading">
                             <i class="fa fa-download"></i>
-                            <h3>Opción 2</h3>
+                            <h3>Opción 1</h3>
                         </div>
                         <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-info" href="#" id="downloadGuia">Descargar Guia</a>
+                            <a class="btn btn-lg btn-block btn-info" href="#" id="downloadGuia" target="_blank">Descargar Guia</a>
                         </div>
                     </div>
                 </div>
@@ -46,10 +37,10 @@
                     <div class="panel panel-danger panel-pricing">
                         <div class="panel-heading">
                             <i class="fa fa-trash-o"></i>
-                            <h3>Opción 3</h3>
+                            <h3>Opción 2</h3>
                         </div>
                         <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-danger" href="#" id="eliminarGuia">Eliminar</a>
+                            <a  class="btn btn-lg btn-block btn-danger" href="#" id="eliminarGuia" >Eliminar</a>
                         </div>
                     </div>
                 </div>
@@ -57,17 +48,6 @@
         </div>
     </section>
 
-
-<div class="modal fade bs-example-modal-lg" id="modalGuia" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <!-- 16:9 aspect ratio -->
-		<div class="embed-responsive embed-responsive-16by9">
-		  <iframe class="embed-responsive-item" id="guiaiframe"></iframe>
-		</div>
-    </div>
-  </div>
-</div>
 
 
 <form action="/target" class="dropzone" id="my-dropzone">
@@ -120,6 +100,6 @@
 <?php
 $js = '<script src="'.URL.'js/application-selects.js" type="text/javascript"></script>';
 $js .= '<script src="'.URL.'js/application-producto.js" type="text/javascript"></script>';
-$js .= '<script>producto.validarGuia();</script>';
+$js .= '<script>producto.validarGuia(); producto.subirGuia();</script>';
 
 ?>

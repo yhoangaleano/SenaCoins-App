@@ -107,6 +107,8 @@ var producto = {
           maxFiles: 1,
           addRemoveLinks: true,
           acceptedFiles: ".pdf,.doc,.docx",
+          maxFilesize: 100,
+          maxThumbnailFilesize: 100,
           // accept: function(file, done) {
           //   if (file.type != "image/jpeg" && file.type != "image/png") {
           //       done("Error! Files of this type are not accepted");
@@ -152,7 +154,7 @@ var producto = {
 
               }else{
 
-                if(response.url_guia != false){
+                if(response.url_guia.url_guia != null){
                     
                     $('#productoAdvertencia').css("display", "none");
                     $('#opciones').css("display", "block");
@@ -160,14 +162,9 @@ var producto = {
                     $('#my-dropzone').css("display", "none");
                     $('#submit-all').css("display", "none");
 
-                    $('#verGuia').attr("onclick","producto.verGuia('"+response.producto+"/"+response.url_guia.url_guia+"')");
-                    $('#downloadGuia').attr("href","upload/guias/"+response.producto+"/"+response.url_guia.url_guia);
+                    $('#downloadGuia').attr("href",url+"upload/guias/"+response.equipo+"/"+response.url_guia.url_guia);
                     $('#eliminarGuia').attr("onclick", "producto.EliminarGuia('"+response.url_guia.url_guia+"')");
                     
-
-                }else{
-
-                    producto.subirGuia();
 
                 }
               }
@@ -186,19 +183,20 @@ var producto = {
             'data':{'nombre':nombre}
         }).done(function(response){
 
+          producto.validarGuia();
+
           if(response.respuesta==true){
             alertify.success("Se elimino la guia correctamente");
-            producto.validarGuia();
+            
+            location.reload();
           }else{
             alertify.success("");
           } 
 
+
+
         }).fail(function(response){
             alertify.error("Error");
         });
-    },
-    verGuia:function(ruta){
-      $('#guiaiframe').attr("src","upload/guias/"+ruta);
-      $('#modalGuia').modal();
     }
 }

@@ -292,7 +292,7 @@
 				$lista = $this->modelImagen->ObtenerGuia();
 			}
 			
-			echo json_encode(array('url_guia' => $lista, 'producto' => $art==false?'false':$art->idProducto));
+			echo json_encode(array('url_guia' => $lista, 'producto' => $art==false?'false':$art->idProducto, 'equipo' => $_SESSION["ID"]));
 		}
 
 
@@ -303,6 +303,16 @@
 			$this->modelImagen->__SET("_producto_idProducto", $art->idProducto);
 			
 			$lista = $this->modelImagen->BorrarGuia();
+
+			if($lista){
+
+				if(unlink("upload/guias/".$_SESSION["ID"]."/".$nombre)){
+					$lista = true;
+				}else{
+					$lista = false;
+				}
+
+			}
 
 			echo json_encode(array("respuesta"=>$lista));
 		}
