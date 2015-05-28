@@ -31,7 +31,7 @@
 			$artefacto = $this->modelProducto->Listar_Detalle_Artefacto();
 
 			$imagenes = $this->modelProducto->Listar_Imagenes_Asociadas();
-			// var_dump($imagenes[0]);
+			// var_dump($imagenes);
 			// exit();
 			$this->render("detalleArtefacto", array("id" => $id, "artefacto" => $artefacto, "imagenes" => $imagenes));
 		}
@@ -208,52 +208,82 @@
 
 		public function subirGuia(){
 
-			if($_POST["txtIdEquipo"] != null){
+			$target_dir = "upload/guias/".$_SESSION["ID"]."/";
+		
+			$target_file = $target_dir . $_FILES["file"]["name"];
+			//var_dump($target_file);
+			$uploadOk = 1;
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
-				$target_dir = "upload/artefactos/".$_POST["txtIdEquipo"]."/";
+			// Check if file already exists
+			if (file_exists($target_file)) {
+			    	echo json_encode([
+					    'status' => 'exist'
+					]);
+			    $uploadOk = 0;
+			}
 
 
-					$target_file = $target_dir . $_FILES["file"]["name"];
-					//var_dump($target_file);
-					$uploadOk = 1;
-					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+			    echo json_encode([
+					    'status' => 'fail'
+				]);
+			// if everything is ok, try to upload file
+			} else {
+			    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
 
-					// Check if file already exists
-					if (file_exists($target_file)) {
-						throw new Exception('exits');
-					    $uploadOk = 0;
-					}
+			    	$this->modelImagen->__SET("_url_imagen", $_FILES["file"]["name"]);
+			    	$art = $this->modelEquipo->artefactoAso($_SESSION["ID"]);
+			    	$this->modelImagen->__SET("_producto_idProducto", $art->idProducto);
 
-					// Check if $uploadOk is set to 0 by an error
-					if ($uploadOk == 0) {
-					    throw new Exception('fail');
-					// if everything is ok, try to upload file
-					} else {
-					    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+			    	if($this->modelImagen->GuardarGuia()){
+			    		echo json_encode([
+					    	'status' => 'ok'
+						]);
+			    	}else{
+			    		echo json_encode([
+					    	'status' => 'fail al guardar'
+						]);
+			    	}
 
-					    	$this->modelImagen->__SET("_url_imagen",$_FILES["file"]["name"]);
-					    	$art = $this->modelEquipo->artefactoAso($_POST["txtIdEquipo"]);
-					    	$this->modelImagen->__SET("_producto_idProducto",$art->idProducto);
-					    	$this->modelImagen->__SET("_estado",$estado);
-
-					    	if($this->modelImagen->Guardar()){
-					    		echo json_encode([
-							    	'status' => 'ok'
-								]);
-					    	}else{
-					    		throw new Exception('fail');
-					    	}
-
-					    } else {
-					        throw new Exception('fail');
-					    }
-					}
+			    } else {
+			        echo json_encode([
+					    	'status' => 'fail subir imagen'
+					]);
+			    }
+				
 			}
 		}
 
 		public function guias(){
 			$this->render("guias");
 		} 
+
+		public function obtenerGuiaProducto(){
+
+			$art = $this->modelEquipo->artefactoAso($_SESSION["ID"]);
+			$lista = false;
+			if($art != false){
+				$this->modelImagen->__SET("_producto_idProducto", $art->idProducto);
+				$lista = $this->modelImagen->ObtenerGuia();
+			}
+			
+			echo json_encode(array('url_guia' => $lista, 'producto' => $art==false?'false':$art->idProducto));
+		}
+
+
+		public function limpiarGuia(){
+
+			$nombre = $_POST["nombre"];
+			$art = $this->modelEquipo->artefactoAso($_SESSION["ID"]);
+			$this->modelImagen->__SET("_producto_idProducto", $art->idProducto);
+			
+			$lista = $this->modelImagen->BorrarGuia();
+
+			echo json_encode(array("respuesta"=>$lista));
+		}
+
 	}
 
 
