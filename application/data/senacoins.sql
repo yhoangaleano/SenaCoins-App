@@ -53,15 +53,7 @@ CREATE TABLE IF NOT EXISTS `equipo` (
 --
 
 INSERT INTO `equipo` (`idEquipo`, `nombre_equipo`, `nombre_usuario`, `contrasena`, `monedas`, `administrador`) VALUES
-(0, 'REDES', 'redes_JP', 'r1234', 1000, b'0'),
-(1, 'MULTIMEDIA', 'm_mm', '2431', 1000, b'0'),
-(2, 'MANTENIMIENTO', 'Mantenimiento_JP', 'man123', 1000, b'0'),
-(3, 'DISEÑO', 'DISEÑO_JP', 'D123', 1000, b'0'),
-(4, 'COCINA', 'cocineros', 'cocina17', 1000, b'0'),
-(5, 'salud', 'salud_123', 's12', 1000, b'0'),
-(6, 'Enfermeria', 'enfer12', 's12', 1000, b'0'),
-(7, '12345', 'kjsd', '123', 1000, b'0'),
-(8, '112312', 'sdasd', 'awe', 1000, b'0');
+(1, 'ADSI', 'admin', '123', 0, b'1');
 
 -- --------------------------------------------------------
 
