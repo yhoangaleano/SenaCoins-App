@@ -213,9 +213,7 @@
 					    	$this->modelImagen->__SET("_estado",$estado);
 
 					    	if($this->modelImagen->Guardar()){
-					    		echo json_encode([
-							    	'status' => 'ok'
-								]);
+					    		
 					    	}else{
 					    		throw new Exception('fail');
 					    	}

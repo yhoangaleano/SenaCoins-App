@@ -107,12 +107,12 @@ var home = {
                       output.innerHTML = value;
                   });
                 }else{
-                    $("#formInversion").append("<h3>No tienes monedas disponibles.</h3>");
+                    $("#formInversion").append("<h3>No cuentas con monedas disponibles.</h3>");
                     $("#camposInversion").remove();
                 };
 
             }else{
-                $("#formInversion").append("<h3>No puedes invertir en tu artefacto.</h3>");
+                $("#formInversion").append("<h3>No puede invertir en el artefacto de su equipo.</h3>");
                 $("#camposInversion").remove();
             };
         })

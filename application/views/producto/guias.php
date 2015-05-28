@@ -3,7 +3,7 @@
 </div>
 
 <div class="alert alert-warning" role="alert" id="productoError" style="display:none">
-	<p>El equipo no cuenta con un producto registrao</p>
+	<p>El equipo no cuenta con un producto registrado</p>
 </div>
 
 <div class="alert alert-info" role="alert" id="productoInfo" style="display:none">

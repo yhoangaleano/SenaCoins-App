@@ -30,7 +30,7 @@ echo $css;
             Cantidad de SENACoins obtenidos: 
           </div>
           <div class="price">
-            <strong><span>$</span><?php echo $artefacto->coins; ?></strong>
+            <strong><span>$</span><?php echo ($artefacto->coins == "" ? 0 : $artefacto->coins); ?></strong>
           </div>
 
         </div>

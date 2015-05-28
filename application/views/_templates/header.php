@@ -139,8 +139,9 @@
           <?php if($_SESSION['Rol'] == 1){ ?>
           <li><a href="<?php echo URL; ?>equipo/index">Equipos</a></li>
           <li><a href="<?php echo URL; ?>producto/index">Artefactos</a></li>
-          <?php } ?>
+          <?php }else{ ?>
           <li><a href="<?php echo URL; ?>producto/guias">Adjuntar guia</a></li>
+          <?php } ?>
           <li><a href="<?php echo URL; ?>home/logout"><p>Bienvenido <?php echo $_SESSION['Equipo'] ?> </p><p>Cerrar sesión</p></a></li>
           <?php }else{ ?>
           <li><a href="<?php echo URL; ?>home/login">Iniciar sesión</a></li>
@@ -389,7 +390,7 @@ data-easing="easeOutExpo">
     Layout.initOWL();
     RevosliderInit.initRevoSlider();
     //Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
-    Layout.initNavScrolling();
+    // Layout.initNavScrolling();
     // alertify.set('notifier','position', 'top-right');
     // alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
   });
