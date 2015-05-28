@@ -43,7 +43,7 @@
     <div class="col-md-4 col-sm-4 front-step-col">
         <div class="front-step front-step3">
             <h2>Invierte</h2>
-            <p>Realiza la inversión al artefacto que decidas, recuerda que cada equipo tiene un monto de $100 SENA Coins.</p>
+            <p>Realiza la inversión al artefacto que decidas, recuerda que cada equipo tiene un monto de $100 millones de SENA Coins.</p>
         </div>
     </div>
 </div>

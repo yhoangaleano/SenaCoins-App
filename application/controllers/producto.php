@@ -95,6 +95,29 @@
 			$this->render("create",['mensaje'=>$mensaje]);
 		}
 
+		// Método para modificar un producto
+		public function Modificar()
+		{
+			$mensaje="";
+			if ($_POST != null) {
+				$idProducto = $_POST['txt'];
+				$nomProducto = $_POST['txtNombreProducto'];
+				$descripcion = $_POST['txtDescripcion'];
+				$this->modelProducto->__SET('_nombre_producto', $nomProducto);
+				$this->modelProducto->__SET('_descripcion', $descripcion);
+				$this->modelProducto->__SET('_idProducto', $idProducto);
+				$modificar = $this->modelProducto->Modificar();
+				if ($modificar == true) {
+					$mensaje="Se modifico correctamente";
+				}
+				else{
+					$mensaje="Error al modificar";
+				}
+
+			}
+			echo json_encode(['item'=>$mensaje]);
+		}
+
 
 		//Imagenes
 		public function asociar(){
