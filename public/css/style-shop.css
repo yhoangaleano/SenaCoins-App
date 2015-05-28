@@ -77,7 +77,7 @@ Header and header elements
 .ecommerce .header-navigation .dropdown-menu > li.active > a,
 .ecommerce .header-navigation .header-navigation-content .header-navigation-col li > a:hover,
 .ecommerce .header-navigation .header-navigation-content .header-navigation-col li.active > a {
-  color: #fff;
+	color: #fff;
 }
 .ecommerce .header-navigation ul > li.active > a {
 	/*border-bottom: 2px solid #E44F00;*/
@@ -91,41 +91,41 @@ Header and header elements
 	margin-top: -3px;
 }
 .ecommerce .reduce-header .header-navigation > ul > li.dropdown:hover > a:after { 
-  bottom: 0;
+	bottom: 0;
 }
 
 /* nav brands */
 .nav-brands {
-  clear: both;
-  margin: -20px -15px;
-  padding: 20px 0 0;
-  width: auto;
+	clear: both;
+	margin: -20px -15px;
+	padding: 20px 0 0;
+	width: auto;
 }
 .nav-brands ul {
-  margin: 0;
-  padding: 10px 0;
-  list-style: none;
-  background: #fff;
-  width: 100%;
-  overflow: hidden;
-  border-top: solid 1px #f0f0f0;
+	margin: 0;
+	padding: 10px 0;
+	list-style: none;
+	background: #fff;
+	width: 100%;
+	overflow: hidden;
+	border-top: solid 1px #f0f0f0;
 }
 .nav-brands li {
-  float: none;
-  margin-right: 0 !important;
-  border: none !important;
-  display: inline-block;
+	float: none;
+	margin-right: 0 !important;
+	border: none !important;
+	display: inline-block;
 }
 .nav-brands img {
-  width: auto;
-  height: 70px;
+	width: auto;
+	height: 70px;
 }
 .nav-brands a {
-  padding: 0 !important;
+	padding: 0 !important;
 }
 .nav-brands a:hover {
-  background: #fff;
-  color: #fff;
+	background: #fff;
+	color: #fff;
 }
 
 /* Top cart block */
@@ -327,6 +327,7 @@ Header and header elements
 	padding: 12px 12px 16px;
 	background: #fff;
 	position: relative;
+	border: 1px solid #e02222;
 }
 .owl-item.active .product-item {
 	margin-right: 10px;
@@ -601,7 +602,7 @@ Header and header elements
 	margin-bottom: 0;
 }
 .checkout-page a {
-    color: #767F88;
+	color: #767F88;
 }
 .checkout-page a:hover {
 	color: #E02222;
@@ -649,7 +650,7 @@ Header and header elements
 	margin: 0 0 10px -2px;
 }
 .radio-list > label {
-    display: block;
+	display: block;
 }
 
 /* compare goods */
@@ -680,11 +681,11 @@ Header and header elements
 }
 .compare-item strong {
 	color: #E84D1C;
-    font-size: 21px;
-    font-weight: normal;
+	font-size: 21px;
+	font-weight: normal;
 }
 .compare-item strong span {
-    font-size: 17px;
+	font-size: 17px;
 }
 .compare-goods .btn-primary {
 	margin-right: 0;
@@ -724,8 +725,8 @@ Header and header elements
 	text-transform: uppercase;
 }
 .ecommerce .sidebar .list-group-item {
-    background: #fff;
-    padding: 8px 10px 6px;
+	background: #fff;
+	padding: 8px 10px 6px;
 }
 
 /* sidebar filter */
@@ -770,8 +771,8 @@ Header and header elements
 }
 
 .checkbox-list > label {
-    display: block;
-    font-weight: normal;
+	display: block;
+	font-weight: normal;
 }
 
 /* sidebar products */
@@ -808,8 +809,8 @@ Header and header elements
 }
 .sidebar-products .price {
 	margin-left: 80px;
-    color: #E84D1C;
-    font: 16px 'PT Sans Narrow', sans-serif;
+	color: #E84D1C;
+	font: 16px 'PT Sans Narrow', sans-serif;
 }
 
 /* BEGIN product page */
@@ -876,7 +877,7 @@ Header and header elements
 	color: #3e4d5c;
 }
 .product-page .nav-tabs > li {
-    margin-top: 1px;
+	margin-top: 1px;
 }
 .product-page-options {
 	border-top: 1px solid #f4f4f4;
@@ -946,25 +947,25 @@ table .product-quantity .input-group {
 	position: static;
 }
 .product-quantity .btn {
-  text-align: center;
-  height: 18px !important;
-  width: 18px;
-  padding: 0 2px 0 1px !important;
-  text-align: center;
-  background: #edeff1;
-  border-radius: 0 !important;
-  font-size: 18px !important;
-  line-height: 1 !important;
-  color: #616b76;
-  margin: 0 !important;
-  position: absolute;
-  right: 0;
+	text-align: center;
+	height: 18px !important;
+	width: 18px;
+	padding: 0 2px 0 1px !important;
+	text-align: center;
+	background: #edeff1;
+	border-radius: 0 !important;
+	font-size: 18px !important;
+	line-height: 1 !important;
+	color: #616b76;
+	margin: 0 !important;
+	position: absolute;
+	right: 0;
 }
 .product-quantity .quantity-up {
-  top: 0;
+	top: 0;
 }
 .product-quantity .quantity-down {
-  bottom: 0;
+	bottom: 0;
 }
 .product-quantity .btn i {
 	position: relative;
@@ -1029,8 +1030,8 @@ table .product-quantity .input-group {
 	background: #edeff1;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    background: #E6400C;
-    color: #fff;
+	background: #E6400C;
+	color: #fff;
 }
 .product-page-content .tab-content {
 	padding: 20px 15px;

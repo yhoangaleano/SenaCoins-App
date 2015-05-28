@@ -9,7 +9,7 @@ echo $css;
 
   <!-- BEGIN CONTENT -->
   <div class="col-md-offset-1 col-md-10 col-sm-12">
-    <h2 class="">Artefacto # <label id="idArtefacto"><?php echo $id ?></label> - Equipo <?php echo $artefacto->nombre_equipo; ?></h2>
+  <h2 class="">Artefacto # <span id="idArtefacto"><?php echo $id ?></span> - Equipo <?php echo $artefacto->nombre_equipo; ?></h2>
 
     <div class="product-page">
       <div class="row">
@@ -61,7 +61,7 @@ echo $css;
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                <button id="btnInvertir" class="btn btn-primary btn-block" type="button">Invertir</button>
+                  <button id="btnInvertir" class="btn btn-primary btn-block" type="button">Invertir</button>
                 </div>
               </div>
             </div>
@@ -97,6 +97,9 @@ echo $css;
 <?php   
 
 $js = '<script src="'.URL.'js/application-home.js" type="text/javascript"></script>';
-$js .= '<script>home.cantidadCoins();</script>';
+if (isset($_SESSION["ID"])) {
+  $js .= '<script>home.cantidadCoins();</script>';
+}
+
 
 ?>
